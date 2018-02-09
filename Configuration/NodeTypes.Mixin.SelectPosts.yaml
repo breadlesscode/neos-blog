@@ -1,0 +1,11 @@
+'Breadlesscode.Blog:Mixin.SelectPosts':
+  abstract: true
+  properties:
+    selectedPosts:
+      type: references
+      ui:
+        label: 'i18n'
+        inspector:
+          group: 'blogPost'
+          editorOptions:
+            nodeTypes: ['Breadlesscode.Blog:Document.Post']

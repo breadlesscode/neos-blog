@@ -1,0 +1,20 @@
+{
+    "description": "Ready to use blog package",
+    "type": "neos-plugin",
+    "name": "breadlesscode/neos-blog",
+    "require": {
+        "neos/flow": "*",
+        "neos/neos": "^3.0",
+        "breadlesscode/neos-listable": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Breadlesscode\\Blog\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Breadlesscode.Blog"
+        }
+    }
+}

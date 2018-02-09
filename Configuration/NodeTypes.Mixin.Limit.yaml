@@ -1,0 +1,10 @@
+'Breadlesscode.Blog:Mixin.Limit':
+  abstract: true
+  properties:
+    limit:
+      type: integer
+      ui:
+        label: 'i18n'
+        inspector:
+          group: 'blogPost'
+          defaultValue: 15

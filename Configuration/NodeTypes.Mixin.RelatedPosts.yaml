@@ -1,0 +1,11 @@
+'Breadlesscode.Blog:Mixin.RelatedPosts':
+  abstract: true
+  properties:
+    relatedPosts:
+      type: references
+      ui:
+        label: 'i18n'
+        inspector:
+          group: 'blogPost'
+          editorOptions:
+            nodeTypes: ['Breadlesscode.Blog:Document.Post']

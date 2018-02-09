@@ -1,0 +1,9 @@
+'Breadlesscode.Blog:Mixin.Paginate':
+  abstract: true
+  properties:
+    isPaginated:
+      type: boolean
+      ui:
+        label: 'i18n'
+        inspector:
+          group: 'blogPost'

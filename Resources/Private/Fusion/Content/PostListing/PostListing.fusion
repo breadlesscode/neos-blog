@@ -1,0 +1,10 @@
+prototype(Breadlesscode.Blog:Content.PostListing) < prototype(Neos.Neos:ContentComponent) {
+    renderer = Breadlesscode.Listable:List {
+        paginated = ${ q(node).property('isPaginated') }
+        collection = ${ q(site).find('[instanceof Breadlesscode.Blog:Document.Post]') }
+        itemRenderer = 'Breadlesscode.Blog:Component.PostListItem'
+        itemsPerPage = ${ q(node).property('limit') }
+
+        @process.wrap = ${ '<div>' + value + '</div>'}
+    }
+}

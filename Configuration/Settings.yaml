@@ -1,0 +1,13 @@
+Neos:
+  Neos:
+    userInterface:
+      translation:
+        autoInclude:
+          'Breadlesscode.Blog':
+            - 'NodeTypes/*'
+            - 'NodeTypes/Content/*'
+            - 'NodeTypes/Document/*'
+            - 'NodeTypes/Mixin/*'
+    fusion:
+      autoInclude:
+        Breadlesscode.Blog: true

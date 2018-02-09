@@ -1,0 +1,11 @@
+prototype(Breadlesscode.Blog:Component.PostListItem) < prototype(Neos.Fusion:Component) {
+    renderer = Neos.Fusion:Tag {
+        tagName = 'article'
+        content = Neos.Fusion:Array {
+            title = Neos.Fusion:Tag {
+                tagName = 'h2'
+                content = Breadlesscode.Listable:ListItem
+            }
+        }
+    }
+}

@@ -1,0 +1,9 @@
+prototype(Breadlesscode.Blog:Document.Category) >
+prototype(Breadlesscode.Blog:Document.Category) < prototype(Neos.Neos:Page) {
+    body >
+    body = Neos.Fusion:Tag {
+        @position = 'after bodyTag'
+        tagName = 'div'
+        content = ${ 'Category: ' + q(node).property('title') }
+    }
+}
