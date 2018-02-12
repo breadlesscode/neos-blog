@@ -7,5 +7,6 @@
         label: 'i18n'
         inspector:
           group: 'blogPost'
+          position: 20
           editorOptions:
             nodeTypes: ['Breadlesscode.Blog:Document.Post']

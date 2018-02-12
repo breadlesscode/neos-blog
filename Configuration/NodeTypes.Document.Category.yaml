@@ -3,3 +3,4 @@
     'Neos.Neos:Document': true
   ui:
     label: 'i18n'
+    icon: 'folder-open-o'
