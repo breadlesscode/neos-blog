@@ -2,8 +2,8 @@ prototype(Breadlesscode.Blog:Document.Post) >
 prototype(Breadlesscode.Blog:Document.Post) < prototype(Neos.Neos:Page) {
     body >
     body = Neos.Fusion:Tag {
-            tagName = 'div'
-            content = Neos.Neos:PrimaryContent {
+        tagName = 'div'
+        content = Neos.Neos:PrimaryContent {
             @position = 'after bodyTag'
             nodePath = 'main'
         }
