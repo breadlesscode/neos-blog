@@ -3,8 +3,8 @@
   properties:
     limit:
       type: integer
+      defaultValue: 15
       ui:
         label: 'i18n'
         inspector:
           group: 'blogPost'
-          defaultValue: 15

@@ -3,6 +3,7 @@
   properties:
     isPaginated:
       type: boolean
+      defaultValue: false
       ui:
         label: 'i18n'
         inspector:
