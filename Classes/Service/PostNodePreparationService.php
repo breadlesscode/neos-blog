@@ -26,16 +26,37 @@ class PostNodePreparationService
      * @var \Neos\Neos\Domain\Service\UserService
      */
     protected $userDomainService;
-
+    /**
+     * this functions listens to the nodeAdded event
+     */
     public function prepareNode(NodeInterface $node)
     {
         if (!$node->getNodeType()->isOfType(self::DOCUMENT_POST_TYPE)) {
             return;
         }
 
+        $this->setAuthorOfPostNodeToCurrentUser($node);
+        $this->setCategoryOfPostNodeToParentCategory($node);
+    }
+    /**
+     * sets the current user label to the author property of the blog post node
+     *
+     * @param NodeInterface $node
+     * @return void
+     */
+    protected function setAuthorOfPostNodeToCurrentUser(NodeInterface $node)
+    {
         $currentUser = $this->userDomainService->getCurrentUser();
         $node->setProperty('author', $currentUser->getLabel());
-
+    }
+    /**
+     * sets the parent category to the category property of the blog post node
+     *
+     * @param NodeInterface $node
+     * @return void
+     */
+    protected function setCategoryOfPostNodeToParentCategory(NodeInterface $node)
+    {
         $parentCategory =  (new FlowQuery([$node]))
             ->parent('[instanceof '. self::DOCUMENT_CATEGORY_TYPE .']')
             ->get(0);
