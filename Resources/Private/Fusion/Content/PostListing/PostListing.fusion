@@ -1,19 +1,16 @@
 prototype(Breadlesscode.Blog:Content.PostListing) < prototype(Neos.Neos:ContentComponent) {
-    renderer = Breadlesscode.Listable:List {
+    renderer = Breadlesscode.Blog:Component.PostList {
         paginated = ${ q(node).property('isPaginated') }
-        collection = Neos.Fusion:Case {
+        itemsPerPage = ${ q(node).property('limit') }
+        collection =  Neos.Fusion:Case {
             selectedPosts {
                 condition = ${ q(node).property('selectedPosts') }
                 renderer = ${ q(node).property('selectedPosts') }
-             }
-             allPosts {
-                 condition = ${ true }
-                 renderer = ${ q(site).find('[instanceof Breadlesscode.Blog:Document.Post]') }
-             }
+            }
+            allPosts {
+                condition = ${ true }
+                renderer = ${ q(site).find('[instanceof Breadlesscode.Blog:Document.Post]') }
+            }
         }
-        itemRenderer = 'Breadlesscode.Blog:Component.PostListItem'
-        itemsPerPage = ${ q(node).property('limit') }
-
-        @process.wrap = ${ '<div>' + value + '</div>'}
     }
 }

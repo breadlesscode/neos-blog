@@ -1,0 +1,5 @@
+prototype(Breadlesscode.Blog:Component.PostList) < prototype(Breadlesscode.Listable:List) {
+    itemRenderer = 'Breadlesscode.Blog:Component.PostListItem'
+    itemsPerPage = 5
+    paginated = ${ true }
+}
