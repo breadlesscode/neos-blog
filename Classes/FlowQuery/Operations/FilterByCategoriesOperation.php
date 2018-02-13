@@ -3,7 +3,7 @@ namespace Breadlesscode\Blog\FlowQuery\Operations;
 
 use Neos\Eel\FlowQuery\FlowQuery;
 use Neos\Eel\FlowQuery\Operations\AbstractOperation;
-use Neos\Eel\Exception as EelException;
+use Neos\Eel\FlowQuery\FlowQueryException;
 
 class FilterByCategoriesOperation extends AbstractOperation
 {
@@ -24,7 +24,7 @@ class FilterByCategoriesOperation extends AbstractOperation
     public function evaluate(FlowQuery $flowQuery, array $arguments)
     {
         if (!is_array($arguments[0])) {
-            throw new EelException('The first parameter of '.self::$shortName.' should be an array');
+            throw new FlowQueryException('The first parameter of '.self::$shortName.' should be an array');
         }
         $context = $flowQuery->getContext();
 
