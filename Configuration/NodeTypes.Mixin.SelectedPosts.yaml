@@ -1,4 +1,4 @@
-'Breadlesscode.Blog:Mixin.SelectPosts':
+'Breadlesscode.Blog:Mixin.SelectedPosts':
   abstract: true
   properties:
     selectedPosts:
