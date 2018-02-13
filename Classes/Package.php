@@ -15,11 +15,18 @@ class Package extends BasePackage
     public function boot(Bootstrap $bootstrap)
     {
         $dispatcher = $bootstrap->getSignalSlotDispatcher();
+
         $dispatcher->connect(
             'Neos\ContentRepository\Domain\Model\Node',
             'nodeAdded',
             'Breadlesscode\Blog\Service\PostNodePreparationService',
-            'prepareNode'
+            'afterNodeAdded'
+        );
+        $dispatcher->connect(
+            'Neos\ContentRepository\Domain\Model\Node',
+            'afterNodeMove',
+            'Breadlesscode\Blog\Service\PostNodePreparationService',
+            'afterNodeMoved'
         );
     }
 }

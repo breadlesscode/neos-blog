@@ -29,13 +29,24 @@ class PostNodePreparationService
     /**
      * this functions listens to the nodeAdded event
      */
-    public function prepareNode(NodeInterface $node)
+    public function afterNodeAdded(NodeInterface $node)
     {
         if (!$node->getNodeType()->isOfType(self::DOCUMENT_POST_TYPE)) {
             return;
         }
 
         $this->setAuthorOfPostNodeToCurrentUser($node);
+        $this->setCategoryOfPostNodeToParentCategory($node);
+    }
+    /**
+     * this functions listens to the nodeMoved event
+     */
+    public function afterNodeMoved(NodeInterface $node)
+    {
+        if (!$node->getNodeType()->isOfType(self::DOCUMENT_POST_TYPE)) {
+            return;
+        }
+
         $this->setCategoryOfPostNodeToParentCategory($node);
     }
     /**
