@@ -6,5 +6,6 @@
       defaultValue: 15
       ui:
         label: 'i18n'
+        reloadIfChanged: true
         inspector:
           group: 'blogPost'

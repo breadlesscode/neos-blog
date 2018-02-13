@@ -6,5 +6,6 @@
       defaultValue: false
       ui:
         label: 'i18n'
+        reloadIfChanged: true
         inspector:
           group: 'blogPost'

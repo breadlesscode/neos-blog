@@ -5,6 +5,7 @@
       type: references
       ui:
         label: 'i18n'
+        reloadIfChanged: true
         inspector:
           group: 'blogPost'
           position: 20
