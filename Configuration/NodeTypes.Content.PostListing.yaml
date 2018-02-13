@@ -6,6 +6,7 @@
     'Breadlesscode.Blog:Mixin.SelectPosts': true
   ui:
     label: 'i18n'
+    icon: 'th-list'
     inspector:
       groups:
         blogPost:
