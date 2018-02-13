@@ -1,0 +1,12 @@
+'Breadlesscode.Blog:Mixin.SelectedCategories':
+  abstract: true
+  properties:
+    selectedCategories:
+      type: references
+      ui:
+        label: 'i18n'
+        reloadIfChanged: true
+        inspector:
+          group: 'blogPost'
+          editorOptions:
+            nodeTypes: ['Breadlesscode.Blog:Document.Category']

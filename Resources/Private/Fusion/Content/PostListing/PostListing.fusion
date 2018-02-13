@@ -7,6 +7,10 @@ prototype(Breadlesscode.Blog:Content.PostListing) < prototype(Neos.Neos:ContentC
                 condition = ${ q(node).property('selectedPosts') }
                 renderer = ${ q(node).property('selectedPosts') }
             }
+            selectedCategories {
+                condition = ${ q(node).property('selectedCategories') }
+                renderer = ${ q(site).find('[instanceof Breadlesscode.Blog:Document.Post]').filterByCategories(q(node).property('selectedCategories')).get() }
+            }
             allPosts {
                 condition = ${ true }
                 renderer = ${ q(site).find('[instanceof Breadlesscode.Blog:Document.Post]') }
