@@ -68,11 +68,11 @@ class PostNodePreparationService
      */
     protected function setCategoryOfPostNodeToParentCategory(NodeInterface $node)
     {
-        $parentCategory =  (new FlowQuery([$node]))
+        $parentCategories =  (new FlowQuery([$node]))
             ->parent('[instanceof '. self::DOCUMENT_CATEGORY_TYPE .']')
-            ->get(0);
+            ->get();
         if ($parentCategory) {
-            $node->setProperty('categories', [$parentCategory]);
+            $node->setProperty('categories', $parentCategories);
         }
     }
 }
