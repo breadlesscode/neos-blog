@@ -2,14 +2,23 @@
   superTypes:
     'Neos.Neos:Document': true
     'Breadlesscode.Blog:Mixin.RelatedPosts': true
+    'Breadlesscode.Blog:Mixin.Taggable': true
+    'Breadlesscode.Blog:Mixin.Categorisable': true
 
   ui:
     label: 'i18n'
+    group: 'blog'
+    position: 200
     icon: 'file-text'
     inspector:
+      tabs:
+        blogPost:
+          label: 'i18n'
+          icon: 'newspaper'
       groups:
         blogPost:
           label: 'i18n'
+          tab: 'blogPost'
 
   childNodes:
     main:
@@ -22,6 +31,8 @@
       ui:
         label: 'i18n'
         reloadIfChanged: true
+        help:
+          message: 'i18n'
         inspector:
           position: 5
           group: blogPost
@@ -32,12 +43,7 @@
         inspector:
           position: 10
           group: blogPost
-    categories:
-      type: references
-      ui:
-        label: 'i18n'
-        inspector:
-          position: 15
-          group: blogPost
+          editor: 'Content/Inspector/Editors/SelectBoxEditor'
           editorOptions:
-            nodeTypes: ['Breadlesscode.Blog:Document.Category']
+            dataSourceIdentifier: 'breadlesscode-blog-user-datasource'
+            minimumResultsForSearch: 3
