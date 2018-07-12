@@ -14,12 +14,6 @@
             <trans-unit id="properties.author" xml:space="preserve">
                 <source>Author</source>
             </trans-unit>
-            <trans-unit id="properties.categories" xml:space="preserve">
-                <source>Categories</source>
-            </trans-unit>
-            <trans-unit id="properties.categories.ui.help.message">
-                <source>Select a category for your blog post. If you cant select a category, you havent create one. Create a new Category by creating a new catewgory page.</source>
-            </trans-unit>
         </body>
     </file>
 </xliff>
