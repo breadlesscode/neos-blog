@@ -3,10 +3,10 @@
     <file original="" product-name="Breadlesscode.Blog" source-language="en" datatype="plaintext">
         <body>
             <trans-unit id="ui.label" xml:space="preserve">
-                <source>Blog Post</source>
+                <source>Article</source>
             </trans-unit>
             <trans-unit id="groups.blogPost" xml:space="preserve">
-                <source>Blog Post</source>
+                <source>Article</source>
             </trans-unit>
             <trans-unit id="properties.datePublished" xml:space="preserve">
                 <source>Publication Date</source>
@@ -16,6 +16,9 @@
             </trans-unit>
             <trans-unit id="properties.categories" xml:space="preserve">
                 <source>Categories</source>
+            </trans-unit>
+            <trans-unit id="properties.categories.ui.help.message">
+                <source>Select a category for your blog post. If you cant select a category, you havent create one. Create a new Category by creating a new catewgory page.</source>
             </trans-unit>
         </body>
     </file>

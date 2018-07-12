@@ -21,10 +21,17 @@ composer require breadlesscode/neos-blog --no-update
 
 The --no-update command prevent the automatic update of the dependencies. After the package was added to your theme composer.json, go back to the root of the Neos installation and run composer update. Your desired package is now installed correctly.
 
-## Useage
+## Todo
+- [ ] Write a better flow query master operation to keep the code DRY
+- [ ] Comments
+- [ ] Tags
+
+## Usage
 Coming soon
+
 ## Configuration
 Coming soon
+
 
 ## License
 The MIT License (MIT). Please see [License File](LICENSE) for more information.

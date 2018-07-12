@@ -11,3 +11,8 @@ Neos:
     fusion:
       autoInclude:
         Breadlesscode.Blog: true
+    nodeTypes:
+      groups:
+        blog:
+          label: 'Blog'
+          icon: 'newspaper'

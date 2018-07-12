@@ -3,7 +3,10 @@
     <file original="" product-name="Breadlesscode.Blog" source-language="en" datatype="plaintext">
         <body>
             <trans-unit id="ui.label" xml:space="preserve">
-                <source>Categorie</source>
+                <source>Tag</source>
+            </trans-unit>
+            <trans-unit id="ui.help.message" xml:space="preserve">
+                <source>You can create Tags for tagging your blog articles.</source>
             </trans-unit>
         </body>
     </file>

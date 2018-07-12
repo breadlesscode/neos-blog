@@ -3,4 +3,6 @@
     'Neos.Neos:Document': true
   ui:
     label: 'i18n'
+    position: 300
+    group: 'blog'
     icon: 'folder-open-o'
