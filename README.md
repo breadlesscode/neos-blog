@@ -8,8 +8,9 @@
 This Neos CMS plugin is for a simple blog functionality.
 
 ## Features
- - Simple blog post listing with pagination
- - Categorizable blog posts
+ - Simple blog article listing with pagination
+ - Categorizable blog articles
+ - Taggable blog articles
  - Comments *comming soon*
 
 ## Installation
@@ -25,6 +26,8 @@ The --no-update command prevent the automatic update of the dependencies. After 
 - [ ] Write a better flow query master operation to keep the code DRY
 - [ ] Comments
 - [ ] Tags
+- [ ] Documentation site (this package is to complex for a single readme file)
+- [ ] Add multible spam detection providers
 
 ## Usage
 Coming soon
