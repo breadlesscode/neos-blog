@@ -8,9 +8,6 @@
             <trans-unit id="groups.blogPost" xml:space="preserve">
                 <source>Blogpost</source>
             </trans-unit>
-            <trans-unit id="properties.datePublished" xml:space="preserve">
-                <source>Veröffentlichungs Datum</source>
-            </trans-unit>
             <trans-unit id="properties.author" xml:space="preserve">
                 <source>Autor</source>
             </trans-unit>

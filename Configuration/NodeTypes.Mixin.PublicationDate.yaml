@@ -1,0 +1,14 @@
+'Breadlesscode.Blog:Mixin.PublicationDate':
+  absgtact: true
+  properties:
+    datePublished:
+      type: DateTime
+      defaultValue: 'now'
+      ui:
+        label: 'i18n'
+        reloadIfChanged: true
+        help:
+          message: 'i18n'
+        inspector:
+          position: 12
+          group: blogPost

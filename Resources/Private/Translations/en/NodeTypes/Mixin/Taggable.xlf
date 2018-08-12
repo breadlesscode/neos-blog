@@ -5,10 +5,8 @@
             <trans-unit id="properties.tags" xml:space="preserve">
                 <source>Tags</source>
             </trans-unit>
-            <trans-unit id="properties.tags.ui.help.message">
-                <source>Select a tags for your blog post. If you cant select a tag, you havent created one.
-                    Create a new tag by creating a new tag page.
-                </source>
+            <trans-unit id="properties.tags.ui.help.message" xml:space="preserve">
+                <source>Select a tags for your blog post. If you cant select a tag, you havent created one.Create a new tag by creating a new tag page.</source>
             </trans-unit>
         </body>
     </file>
