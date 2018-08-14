@@ -83,9 +83,7 @@ class PostNodePreparationService
         $parentCategories =  (new FlowQuery([$node]))
             ->parent('[instanceof '. self::DOCUMENT_CATEGORY_TYPE .']')
             ->get();
-
-        if ($parentCategories) {
-            $node->setProperty('categories', $parentCategories);
-        }
+        
+        $node->setProperty('categories', $parentCategories);
     }
 }
