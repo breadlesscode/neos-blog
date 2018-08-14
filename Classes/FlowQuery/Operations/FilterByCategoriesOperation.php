@@ -5,7 +5,7 @@ use Neos\Eel\FlowQuery\FlowQuery;
 use Neos\Eel\FlowQuery\Operations\AbstractOperation;
 use Neos\Eel\FlowQuery\FlowQueryException;
 
-class FilterByCategoriesOperation extends AbstractOperation
+class FilterByCategoriesOperation extends FilterByReferencesOperation
 {
     /**
      * {@inheritdoc}
@@ -26,17 +26,8 @@ class FilterByCategoriesOperation extends AbstractOperation
         if (!is_array($arguments[0])) {
             throw new FlowQueryException('The first parameter of '.self::$shortName.' should be an array');
         }
-        $context = $flowQuery->getContext();
 
-        $context = \array_filter($context, function ($node) use ($arguments) {
-            $categories = $node->getProperty('categories');
-
-            if ($categories === null) {
-                return false;
-            }
-            return count(array_intersect($categories, $arguments[0])) > 0;
-        });
-
+        $context = \array_filter($flowQuery->getContext(), $this->getReferenceFilter('categories', $arguments[0]));
         $flowQuery->setContext($context);
     }
 }
