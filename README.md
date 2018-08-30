@@ -11,7 +11,9 @@ This Neos CMS plugin is for a simple blog functionality.
  - Simple blog article listing with pagination
  - Categorizable blog articles
  - Taggable blog articles
+ - WordPress import *comming soon*
  - Comments *comming soon*
+ - Spam detection  *comming soon*
 
 ## Installation
 Most of the time you have to make small adjustments to a package (e.g., the configuration in Settings.yaml). Because of that, it is important to add the corresponding package to the composer from your theme package. Mostly this is the site package located under Packages/Sites/. To install it correctly go to your theme package (e.g.Packages/Sites/Foo.Bar) and run following command:
@@ -22,19 +24,8 @@ composer require breadlesscode/neos-blog --no-update
 
 The --no-update command prevent the automatic update of the dependencies. After the package was added to your theme composer.json, go back to the root of the Neos installation and run composer update. Your desired package is now installed correctly.
 
-## Todo
-- [ ] Write a better flow query master operation to keep the code DRY
-- [ ] Comments
-- [ ] Tags
-- [ ] Documentation site (this package is to complex for a single readme file)
-- [ ] Add multible spam detection providers
-
 ## Usage
 Coming soon
-
-## Configuration
-Coming soon
-
 
 ## License
 The MIT License (MIT). Please see [License File](LICENSE) for more information.
