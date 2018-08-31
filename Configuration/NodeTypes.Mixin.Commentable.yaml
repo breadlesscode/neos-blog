@@ -1,0 +1,9 @@
+'Breadlesscode.Blog:Mixin.Commentable':
+  abstract: true
+  childNodes:
+    comments:
+      type: 'Neos.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': false
+          'Breadlesscode.Blog:Content.Comment': true
