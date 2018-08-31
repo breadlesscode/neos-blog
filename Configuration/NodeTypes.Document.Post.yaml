@@ -10,7 +10,7 @@
     label: 'i18n'
     group: 'blog'
     position: 200
-    icon: 'file-text'
+    icon: 'newspaper'
     inspector:
       groups:
         blogPost:
