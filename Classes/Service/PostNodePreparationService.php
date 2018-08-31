@@ -38,6 +38,9 @@ class PostNodePreparationService
 
     /**
      * this functions listens to the nodeAdded event
+     *
+     * @param NodeInterface $node
+     * @throws \Neos\Eel\Exception
      */
     public function afterNodeAdded(NodeInterface $node)
     {
@@ -48,8 +51,12 @@ class PostNodePreparationService
         $this->setAuthorOfPostNodeToCurrentUser($node);
         $this->setCategoryOfPostNodeToParentCategory($node);
     }
+
     /**
      * this functions listens to the nodeMoved event
+     *
+     * @param NodeInterface $node
+     * @throws \Neos\Eel\Exception
      */
     public function afterNodeMoved(NodeInterface $node)
     {
@@ -59,6 +66,7 @@ class PostNodePreparationService
 
         $this->setCategoryOfPostNodeToParentCategory($node);
     }
+
     /**
      * sets the current user label to the author property of the blog post node
      *
@@ -72,18 +80,20 @@ class PostNodePreparationService
 
         $node->setProperty('author', $userIdentifier);
     }
+
     /**
      * sets the parent category to the category property of the blog post node
      *
      * @param NodeInterface $node
      * @return void
+     * @throws \Neos\Eel\Exception
      */
     protected function setCategoryOfPostNodeToParentCategory(NodeInterface $node)
     {
         $parentCategories =  (new FlowQuery([$node]))
             ->parent('[instanceof '. self::DOCUMENT_CATEGORY_TYPE .']')
             ->get();
-        
+
         $node->setProperty('categories', $parentCategories);
     }
 }

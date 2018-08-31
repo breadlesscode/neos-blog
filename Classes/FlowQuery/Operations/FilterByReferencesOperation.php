@@ -1,6 +1,7 @@
 <?php
 namespace Breadlesscode\Blog\FlowQuery\Operations;
 
+use Neos\ContentRepository\Domain\Model\NodeInterface;
 use Neos\Eel\FlowQuery\FlowQuery;
 use Neos\Eel\FlowQuery\Operations\AbstractOperation;
 use Neos\Eel\FlowQuery\FlowQueryException;
@@ -20,6 +21,7 @@ class FilterByReferencesOperation extends AbstractOperation
      * @param FlowQuery $flowQuery the FlowQuery object
      * @param array $arguments the arguments for this operation
      * @return void
+     * @throws FlowQueryException
      */
     public function evaluate(FlowQuery $flowQuery, array $arguments)
     {
@@ -35,7 +37,7 @@ class FilterByReferencesOperation extends AbstractOperation
     }
 
     /**
-     * this method returns a clousre which intersect references on a given property
+     * this method returns a closure which intersect references on a given property
      *
      * @param string $propertyName
      * @param array $references
@@ -43,7 +45,7 @@ class FilterByReferencesOperation extends AbstractOperation
      */
     public function getReferenceFilter(string $propertyName, array $references)
     {
-        return function ($node) use ($propertyName, $references) {
+        return function (NodeInterface $node) use ($propertyName, $references) {
             $nodeReferences = $node->getProperty($propertyName);
 
             if ($nodeReferences === null) {
