@@ -4,7 +4,10 @@ namespace Breadlesscode\Blog\Service;
 use Breadlesscode\Blog\Dto\CommentDto;
 use Breadlesscode\Blog\Exception\InvalidNodeTypeException;
 use Neos\ContentRepository\Domain\Model\NodeInterface;
+use Neos\ContentRepository\Domain\Model\NodeTemplate;
 use Neos\ContentRepository\Domain\Service\ContextFactoryInterface;
+use Neos\ContentRepository\Domain\Service\NodeTypeManager;
+use Neos\Flow\Annotations as Flow;
 
 class CommentService
 {
@@ -14,20 +17,41 @@ class CommentService
     const COMMENTABLE_NODE_TYPE = 'Breadlesscode.Blog:Mixin.Commentable';
 
     /**
-     * @Flow\Inject
+     * node type of the commentable mixin
+     */
+    const COMMENT_NODE_TYPE = 'Breadlesscode.Blog:Content.Comment';
+
+    /**
+     * @Flow\Inject()
      * @var ContextFactoryInterface
      */
-    private $contextFactory;
+    protected $contextFactory;
+
+    /**
+     * @Flow\Inject()
+     * @var NodeTypeManager
+     */
+    protected $nodeTypeManager;
 
     /**
      * creates a comment node from the CommentDto
      *
+     * @param NodeInterface $commentCollection
      * @param CommentDto $comment
      * @return NodeInterface
+     * @throws \Neos\ContentRepository\Exception\NodeTypeNotFoundException
      */
-    public function createNode(CommentDto $comment): NodeInterface
+    protected function createNode(NodeInterface $commentCollection, CommentDto $comment): NodeInterface
     {
-        $commentNode = null;
+        $commentNodeType = $this->nodeTypeManager->getNodeType(self::COMMENT_NODE_TYPE);
+        $commentNodeTemplate = new NodeTemplate();
+        $commentNodeTemplate->setNodeType($commentNodeType);
+
+        $commentNode = $commentCollection->createNodeFromTemplate($commentNodeTemplate);
+        $commentNode->setProperty('name', $comment->getName());
+        $commentNode->setProperty('email', $comment->getEmail());
+        $commentNode->setProperty('content', $comment->getContent());
+        $commentNode->setProperty('createdAt', $comment->getCreatedAt());
 
         return $commentNode;
     }
@@ -36,17 +60,17 @@ class CommentService
      * adds a comment node to a blog post node
      *
      * @param NodeInterface $commentableNode
-     * @param NodeInterface $commentNode
+     * @param CommentDto $comment
      * @throws InvalidNodeTypeException
+     * @throws \Neos\ContentRepository\Exception\NodeTypeNotFoundException
      */
-    public function addToPost(NodeInterface $commentableNode, NodeInterface $commentNode)
+    public function addComment(NodeInterface $commentableNode, CommentDto $comment)
     {
         if (!$commentableNode->getNodeType()->isOfType(self::COMMENTABLE_NODE_TYPE)) {
             throw new InvalidNodeTypeException('The commentable node type should implement the mixin '.self::COMMENTABLE_NODE_TYPE, 1536244558);
         }
 
-        $commentCollection = $commentableNode->getNode('comments');
-        $commentCollection->moveInto($commentNode);
+        $this->createNode($commentableNode->getNode('comments'), $comment);
     }
 
     /**
@@ -59,7 +83,7 @@ class CommentService
         $commentableNode = $this->getContext()->getNodeByIdentifier($commentableIdentifier);
 
         if (!$commentableNode->getNodeType()->isOfType(self::COMMENTABLE_NODE_TYPE)) {
-            throw new InvalidNodeTypeException('The commentable node type should implement the mixin '.self::COMMENTABLE_NODE_TYPE, 1536244558);
+            throw new InvalidNodeTypeException('The commentable node type should implement the mixin '.self::COMMENTABLE_NODE_TYPE, 1536244559);
         }
 
         return $commentableNode;
@@ -80,5 +104,4 @@ class CommentService
             'inaccessibleContentShown' => false
         ]);
     }
-
 }

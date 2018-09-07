@@ -23,9 +23,8 @@ class AddCommentFormFinisher extends AbstractFinisher
         try {
             $commentableNodeIdentifier = $this->parseOption('commentable_node');
             $commentableNode = $this->commentService->findCommentable($commentableNodeIdentifier);
-            $commentNode = $this->commentService->createNode($this->getCommentDto());
 
-            $this->commentService->addToPost($commentableNode, $commentNode);
+            $this->commentService->addComment($commentableNode, $this->getCommentDto());
         } catch (\Exception | InvalidNodeTypeException $exception) {
             $this->finisherContext->cancel();
         }

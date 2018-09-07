@@ -19,6 +19,16 @@ class CommentDto
     protected $content;
 
     /**
+     * @var \DateTime
+     */
+    protected $createdAt;
+
+    public function __construct()
+    {
+        $this->createdAt = new \DateTime('now');
+    }
+
+    /**
      * @return string
      */
     public function getEmail(): string
@@ -64,5 +74,21 @@ class CommentDto
     public function setContent(string $content): void
     {
         $this->content = $content;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getCreatedAt(): \DateTime
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * @param \DateTime $createdAt
+     */
+    public function setCreatedAt(\DateTime $createdAt): void
+    {
+        $this->createdAt = $createdAt;
     }
 }
