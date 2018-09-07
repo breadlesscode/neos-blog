@@ -1,0 +1,6 @@
+include: Element/*.fusion
+
+
+prototype(Neos.NodeTypes:Form) {
+    presetName = 'fusion'
+}

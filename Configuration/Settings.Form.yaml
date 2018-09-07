@@ -1,0 +1,8 @@
+Neos:
+  Form:
+    presets:
+      'fusion':
+        formElementTypes:
+          'Breadlesscode.Blog:Form.Element.Commentable':
+            superTypes:
+              'Neos.Form:FormElement': true

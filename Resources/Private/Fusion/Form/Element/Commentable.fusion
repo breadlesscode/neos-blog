@@ -1,0 +1,12 @@
+prototype(Breadlesscode.Blog:Form.Element.Commentable) < prototype(Neos.Form.FusionRenderer:FormElement) {
+    fieldContainer {
+        field {
+            tagName = 'input'
+            attributes {
+                type = 'hidden'
+                name = ${ 'commentable_identifier' }
+                value = ${ documentNode.identifier }
+            }
+        }
+    }
+}
