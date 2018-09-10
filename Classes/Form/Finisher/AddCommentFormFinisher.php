@@ -21,9 +21,7 @@ class AddCommentFormFinisher extends AbstractFinisher
     protected function executeInternal()
     {
         try {
-            $commentableNodeIdentifier = $this->parseOption('commentable_node');
-            $commentableNode = $this->commentService->findCommentable($commentableNodeIdentifier);
-
+            $commentableNode = $this->parseOption('node');
             $this->commentService->addComment($commentableNode, $this->getCommentDto());
         } catch (\Exception | InvalidNodeTypeException $exception) {
             $this->finisherContext->cancel();
@@ -39,6 +37,7 @@ class AddCommentFormFinisher extends AbstractFinisher
         $comment->setName($this->parseOption('name'));
         $comment->setEmail($this->parseOption('email'));
         $comment->setContent($this->parseOption('content'));
+        $comment->setIsHidden(true);
 
         return $comment;
     }

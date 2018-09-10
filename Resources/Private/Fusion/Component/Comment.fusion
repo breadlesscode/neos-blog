@@ -1,0 +1,24 @@
+prototype(Breadlesscode.Blog:Component.Comment) < prototype(Neos.Fusion:Component) {
+    name = ''
+    email = ''
+    content = ''
+    createdAt = ''
+
+    renderer = Neos.Fusion:Tag {
+        content = Neos.Fusion:Array {
+            name = Neos.Fusion:Tag {
+                tagName = 'p'
+                content = ${ props.name }
+            }
+            content = Neos.Fusion:Tag {
+                tagName = 'p'
+                content = ${ props.content }
+            }
+            createdAt = Neos.Fusion:Tag {
+                tagName = 'p'
+                content = ${ 'Created at: ' + Date.format(props.createdAt, 'd.m.Y H:i') }
+            }
+        }
+        attributes.class = 'comment'
+    }
+}

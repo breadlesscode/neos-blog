@@ -19,6 +19,11 @@ class CommentDto
     protected $content;
 
     /**
+     * @var boolean
+     */
+    protected $isHidden;
+
+    /**
      * @var \DateTime
      */
     protected $createdAt;
@@ -90,5 +95,21 @@ class CommentDto
     public function setCreatedAt(\DateTime $createdAt): void
     {
         $this->createdAt = $createdAt;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isHidden(): bool
+    {
+        return $this->isHidden;
+    }
+
+    /**
+     * @param bool $isHidden
+     */
+    public function setIsHidden(bool $isHidden): void
+    {
+        $this->isHidden = $isHidden;
     }
 }

@@ -2,8 +2,5 @@
   abstract: true
   childNodes:
     comments:
-      type: 'Neos.Neos:ContentCollection'
-      constraints:
-        nodeTypes:
-          '*': false
-          'Breadlesscode.Blog:Content.Comment': true
+      type: 'Breadlesscode.Blog:Collection.Comments'
+      position: 'after main'

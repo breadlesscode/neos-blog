@@ -12,5 +12,9 @@ prototype(Breadlesscode.Blog:Document.Post) < prototype(Neos.Neos:Page) {
                 nodePath = 'main'
             }
         }
+        form = Breadlesscode.Blog:Form.Comment
+        comments = Neos.Neos:ContentCollection {
+            nodePath = 'comments'
+        }
     }
 }

@@ -3,7 +3,7 @@
     'Neos.Neos:Content': true
   ui:
     label: 'i18n'
-    icon: 'th-list'
+    icon: 'icon-comment'
     inspector:
       groups:
         comment:

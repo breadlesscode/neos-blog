@@ -52,6 +52,7 @@ class CommentService
         $commentNode->setProperty('email', $comment->getEmail());
         $commentNode->setProperty('content', $comment->getContent());
         $commentNode->setProperty('createdAt', $comment->getCreatedAt());
+        $commentNode->setHidden($comment->isHidden());
 
         return $commentNode;
     }
@@ -66,7 +67,7 @@ class CommentService
      */
     public function addComment(NodeInterface $commentableNode, CommentDto $comment)
     {
-        if (!$commentableNode->getNodeType()->isOfType(self::COMMENTABLE_NODE_TYPE)) {
+        if (!$this->isCommentableNode($commentableNode)) {
             throw new InvalidNodeTypeException('The commentable node type should implement the mixin '.self::COMMENTABLE_NODE_TYPE, 1536244558);
         }
 
@@ -82,11 +83,20 @@ class CommentService
     {
         $commentableNode = $this->getContext()->getNodeByIdentifier($commentableIdentifier);
 
-        if (!$commentableNode->getNodeType()->isOfType(self::COMMENTABLE_NODE_TYPE)) {
+        if (!$this->isCommentableNode($commentableNode)) {
             throw new InvalidNodeTypeException('The commentable node type should implement the mixin '.self::COMMENTABLE_NODE_TYPE, 1536244559);
         }
 
         return $commentableNode;
+    }
+
+    /**
+     * @param NodeInterface $node
+     * @return bool
+     */
+    public function isCommentableNode(NodeInterface $node): bool
+    {
+        return $node->getNodeType()->isOfType(self::COMMENTABLE_NODE_TYPE);
     }
 
     /**

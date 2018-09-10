@@ -2,6 +2,9 @@ Neos:
   Form:
     presets:
       'fusion':
+        finisherPresets:
+          'Breadlesscode.Blog:From.Finisher.AddComment':
+              implementationClassName: 'Breadlesscode\Blog\Form\Finisher\AddCommentFormFinisher'
         formElementTypes:
           'Breadlesscode.Blog:Form.Element.Commentable':
             superTypes:

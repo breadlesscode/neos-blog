@@ -1,0 +1,8 @@
+prototype(Breadlesscode.Blog:Content.Comment) < prototype(Neos.Neos:ContentComponent) {
+    renderer = Breadlesscode.Blog:Component.Comment {
+        name = ${ q(node).property('name') }
+        email = ${ q(node).property('email') }
+        content = ${ q(node).property('content') }
+        createdAt = ${ q(node).property('createdAt') }
+    }
+}
