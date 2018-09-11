@@ -5,6 +5,7 @@ Neos:
         autoInclude:
           'Breadlesscode.Blog':
             - 'NodeTypes/*'
+            - 'NodeTypes/Collection/*'
             - 'NodeTypes/Content/*'
             - 'NodeTypes/Document/*'
             - 'NodeTypes/Mixin/*'

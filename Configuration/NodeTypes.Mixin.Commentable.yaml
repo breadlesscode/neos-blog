@@ -1,6 +1,0 @@
-'Breadlesscode.Blog:Mixin.Commentable':
-  abstract: true
-  childNodes:
-    comments:
-      type: 'Breadlesscode.Blog:Collection.Comments'
-      position: 'after main'

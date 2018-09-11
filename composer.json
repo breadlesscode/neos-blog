@@ -5,7 +5,7 @@
     "require": {
         "neos/flow": "*",
         "neos/neos": "~4.0",
-        "neos/form-fusionrenderer": "~1.0",
+        "breadlesscode/neos-commentable": "*",
         "breadlesscode/neos-listable": "*"
     },
     "autoload": {

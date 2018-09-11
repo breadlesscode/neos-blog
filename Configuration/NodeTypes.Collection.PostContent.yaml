@@ -1,0 +1,7 @@
+'Breadlesscode.Blog:Collection.PostContent':
+  superTypes:
+    'Neos.Neos:ContentCollection': true
+  label: '${ I18n.translate(node.nodeType.label) }'
+  ui:
+    icon: 'icon-folder-open'
+    label: 'i18n'
