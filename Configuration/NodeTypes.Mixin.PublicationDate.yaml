@@ -1,5 +1,5 @@
 'Breadlesscode.Blog:Mixin.PublicationDate':
-  absgtact: true
+  abstract: true
   properties:
     datePublished:
       type: DateTime

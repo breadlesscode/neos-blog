@@ -6,6 +6,7 @@
     'Breadlesscode.Blog:Mixin.RelatedPosts': true
     'Breadlesscode.Blog:Mixin.Taggable': true
     'Breadlesscode.Blog:Mixin.Categorisable': true
+    'Breadlesscode.Commentable:Mixin.Commentable': true
 
   ui:
     label: 'i18n'
@@ -19,4 +20,4 @@
 
   childNodes:
     main:
-      type: 'Neos.Neos:ContentCollection'
+      type: 'Breadlesscode.Blog:Collection.PostContent'

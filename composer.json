@@ -4,7 +4,8 @@
     "name": "breadlesscode/neos-blog",
     "require": {
         "neos/flow": "*",
-        "neos/neos": "^3.0 | ^4.0",
+        "neos/neos": "~4.0",
+        "breadlesscode/neos-commentable": "*",
         "breadlesscode/neos-listable": "*"
     },
     "autoload": {
