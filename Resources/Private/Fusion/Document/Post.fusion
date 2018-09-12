@@ -2,19 +2,37 @@ prototype(Breadlesscode.Blog:Document.Post) >
 prototype(Breadlesscode.Blog:Document.Post) < prototype(Neos.Neos:Page) {
     @context.author =  ${ Blog.getUserByIdentifier(q(node).property('author')) }
 
-    body = Neos.Fusion:Array {
-        heading = Neos.Fusion:Tag {
-            tagName = 'h1'
-            content = ${ 'Blog Post by ' + author.label }
-        }
-        content =  Neos.Fusion:Tag {
-            tagName = 'div'
-            content = Neos.Neos:PrimaryContent {
-                @position = 'after bodyTag'
-                nodePath = 'main'
+    body >
+    body = Neos.Fusion:Tag {
+        content = Neos.Fusion:Array {
+            article = Neos.Fusion:Tag {
+                tagName = 'article'
+                content = Neos.Fusion:Array {
+                    heading = Neos.Fusion:Tag {
+                        tagName = 'h1'
+                        content = ${ q(node).property('title') + ' <small> by ' + author.label + '</small>'}
+                    }
+                    createdAt = Neos.Fusion:Tag {
+                        tagName = 'time'
+                        content = ${Date.format(q(node).property('datePublished'), 'r')}
+                    }
+                    content = Neos.Fusion:Tag {
+                        tagName = 'div'
+                        content = Neos.Neos:PrimaryContent {
+                            nodePath = 'main'
+                        }
+                    }
+                }
+            }
+            comments = Neos.Fusion:Tag {
+                tagName = 'section'
+                content = Neos.Fusion:Array {
+                    form = Breadlesscode.Commentable:Form.Comment
+                    comments = Breadlesscode.Commentable:Collection.Comment
+                }
             }
         }
-        form = Breadlesscode.Commentable:Form.Comment
-        comments = Breadlesscode.Commentable:Collection.Comment
+        @position = 'after bodyTag'
     }
+
 }
