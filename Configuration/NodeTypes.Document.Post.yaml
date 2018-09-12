@@ -3,7 +3,7 @@
     'Neos.Neos:Document': true
     'Breadlesscode.Blog:Mixin.Authorable': true
     'Breadlesscode.Blog:Mixin.PublicationDate': true
-    'Breadlesscode.Blog:Mixin.RelatedPosts': true
+    'Breadlesscode.Blog:Mixin.RelatedPosts': false
     'Breadlesscode.Blog:Mixin.Taggable': true
     'Breadlesscode.Blog:Mixin.Categorisable': true
     'Breadlesscode.Commentable:Mixin.Commentable': true
@@ -17,6 +17,7 @@
       groups:
         blogPost:
           label: 'i18n'
+          icon: 'newspaper'
 
   childNodes:
     main:
