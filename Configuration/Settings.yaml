@@ -17,3 +17,6 @@ Neos:
         blog:
           label: 'Blog'
           icon: 'newspaper'
+  Fusion:
+    defaultContext:
+      'Blog': 'Breadlesscode\Blog\Eel\Helper\BlogHelper'
