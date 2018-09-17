@@ -7,25 +7,37 @@ prototype(Breadlesscode.Blog:Document.Post) < prototype(Neos.Neos:Page) {
         content = Neos.Fusion:Array {
             article = Neos.Fusion:Tag {
                 tagName = 'article'
+                attributes.class = 'blog_post'
+
                 content = Neos.Fusion:Array {
                     heading = Neos.Fusion:Tag {
                         tagName = 'h1'
-                        content = ${ q(node).property('title') + ' <small> by ' + author.label + '</small>'}
+                        content = ${ q(node).property('title') }
+                        attributes.class = 'blog_post__title'
                     }
-                    createdAt = Neos.Fusion:Tag {
-                        tagName = 'time'
-                        content = ${Date.format(q(node).property('datePublished'), 'r')}
+
+                    content = Neos.Neos:ContentCollection {
+                        nodePath = 'main'
+                        attributes.class = 'blog_post__content'
                     }
-                    content = Neos.Fusion:Tag {
-                        tagName = 'div'
-                        content = Neos.Neos:PrimaryContent {
-                            nodePath = 'main'
+
+                    details = Neos.Fusion:Tag {
+                        attributes.class = 'blog_post__details'
+                        content = Neos.Fusion:Array {
+                            createdBy = ${  author.label + ' &bull; ' }
+                            createdAt = Neos.Fusion:Tag {
+                                tagName = 'time'
+                                content = ${Date.format(q(node).property('datePublished'), 'r')}
+                            }
                         }
+                        content.@process.wrapInParagraph = ${ '<p>' + value + '</p>' }
                     }
                 }
             }
+
             comments = Neos.Fusion:Tag {
                 tagName = 'section'
+                attributes.class = 'blog_comments'
                 content = Neos.Fusion:Array {
                     form = Breadlesscode.Commentable:Form.Comment
                     comments = Breadlesscode.Commentable:Collection.Comment
