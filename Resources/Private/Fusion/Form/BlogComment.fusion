@@ -1,0 +1,28 @@
+prototype(Breadlesscode.Commentable:Form.BlogComment) < prototype(Breadlesscode.Commentable:Form.Comment) {
+    finishers {
+        sayThankYou = Neos.Form.Builder:ConfirmationFinisher.Definition {
+            options {
+                message = ${ Translation.translate(Configuration.setting('Breadlesscode.Blog.comments.confirmation.message')) }
+                message.@process.wrapInParagraph = ${ '<p>' + value + '</p>' }
+            }
+
+            @if.hasMessage = ${ Configuration.setting('Breadlesscode.Blog.comments.confirmation.message') }
+        }
+        sendNotification = Neos.Form.Builder:EmailFinisher.Definition {
+            options {
+                subject = ${ Configuration.setting('Breadlesscode.Blog.comments.notification.subject') }
+                recipientName = ${ Configuration.setting('Breadlesscode.Blog.comments.notification.recipient.name') }
+                recipientName.@if.hasName = ${ Configuration.setting('Breadlesscode.Blog.comments.notification.recipient.name') }
+                recipientEmail = ${ Configuration.setting('Breadlesscode.Blog.comments.notification.recipient.email') }
+                templatePathAndFilename = ${ Configuration.setting('Breadlesscode.Blog.comments.notification.template') }
+                senderAdress = '{email}'
+                senderName = '{name}'
+                variables = Neos.Fusion:RawArray {
+                    post = ${ documentNode }
+                }
+            }
+
+            @if.notificationIsEnabled = ${ Configuration.setting('Breadlesscode.Blog.comments.notification.sendMail') }
+        }
+    }
+}

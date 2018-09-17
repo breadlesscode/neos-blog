@@ -39,7 +39,7 @@ prototype(Breadlesscode.Blog:Document.Post) < prototype(Neos.Neos:Page) {
                 tagName = 'section'
                 attributes.class = 'blog_comments'
                 content = Neos.Fusion:Array {
-                    form = Breadlesscode.Commentable:Form.Comment
+                    form = Breadlesscode.Commentable:Form.BlogComment
                     comments = Breadlesscode.Commentable:Collection.Comment
                 }
             }
