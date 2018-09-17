@@ -93,8 +93,8 @@ All node types that this package provides.
 
 ### Important Fusion-Prototypes
  - [Breadlesscode.Blog:Component.PostListItem](Resources/Private/Fusion/Component/PostListItem.fusion) - Singel list item for listing element
- - [Breadlesscode.Blog:Document.Tag](Resources/Private/Fusion/Document/Post.fusion) - The post document node
- - [Breadlesscode.Blog:Document.Tag](Resources/Private/Fusion/Document/Category.fusion) - The category document node
+ - [Breadlesscode.Blog:Document.Post](Resources/Private/Fusion/Document/Post.fusion) - The post document node
+ - [Breadlesscode.Blog:Document.Category](Resources/Private/Fusion/Document/Category.fusion) - The category document node
  - [Breadlesscode.Blog:Document.Tag](Resources/Private/Fusion/Document/Tag.fusion) - The tag document node
 
 ### Configuration
