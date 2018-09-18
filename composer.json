@@ -5,6 +5,7 @@
     "require": {
         "neos/flow": "*",
         "neos/neos": "~4.0",
+        "neos/swiftmailer": "~6.0",
         "breadlesscode/neos-commentable": "~1.0",
         "breadlesscode/neos-listable": "~1.2"
     },
