@@ -9,4 +9,4 @@
         inspector:
           group: 'blogPost'
           editorOptions:
-            nodeTypes: ['Breadlesscode.Blog:Document.Category']
+            nodeTypes: ['Breadlesscode.Blog:Document.CategoryBlog']

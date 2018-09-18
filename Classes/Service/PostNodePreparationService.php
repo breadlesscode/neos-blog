@@ -17,7 +17,7 @@ class PostNodePreparationService
     /**
      * error page type name
      */
-    const DOCUMENT_CATEGORY_TYPE = 'Breadlesscode.Blog:Document.Category';
+    const DOCUMENT_CATEGORY_TYPE = 'Breadlesscode.Blog:Document.CategoryBlog';
 
     /**
      * error page type name

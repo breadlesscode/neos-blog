@@ -1,4 +1,5 @@
-'Breadlesscode.Blog:Document.Category':
+# I wish I could name it category, but there is a fusion bug…
+'Breadlesscode.Blog:Document.CategoryBlog':
   superTypes:
     'Neos.Neos:Document': true
   ui:
