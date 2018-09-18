@@ -1,3 +1,4 @@
+prototype(Breadlesscode.Blog:Content.PostListing) >
 prototype(Breadlesscode.Blog:Content.PostListing) < prototype(Neos.Neos:ContentComponent) {
     renderer = Breadlesscode.Blog:Component.PostList {
         paginated = ${ q(node).property('isPaginated') }

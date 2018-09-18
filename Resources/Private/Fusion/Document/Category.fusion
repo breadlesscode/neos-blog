@@ -1,9 +1,20 @@
 prototype(Breadlesscode.Blog:Document.Category) >
 prototype(Breadlesscode.Blog:Document.Category) < prototype(Neos.Neos:Page) {
+    @context.category = ${ node }
+
     body >
     body = Neos.Fusion:Tag {
-        @position = 'after bodyTag'
-        tagName = 'div'
-        content = ${ 'Category: ' + q(node).property('title') }
+        attributes.class = 'blog-tag'
+        content = Neos.Fusion:Array {
+            headline = Neos.Fusion:Tag {
+                tagName = 'h1'
+                content = ${Translation.translate('Breadlesscode.Blog:Main:category.title') + ': ' + q(category).property('title')}
+            }
+            list = Breadlesscode.Blog:Component.PostList {
+                paginated = true
+                itemsPerPage = 10
+                collection = ${q(site).find('[instanceof Breadlesscode.Blog:Document.Post]').filterByCategories([ category ]).get()}
+            }
+        }
     }
 }
