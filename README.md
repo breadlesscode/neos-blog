@@ -31,22 +31,6 @@ prototype(Vendor.Xy:RecentBlogPosts) < prototype(Breadlesscode.Blog:Component.Po
     collection = ${ q(site).find('[instanceof Breadlesscode.Blog:Document.Post]').sort('datePublished', 'DESC').get() }
 }
 ```
-### List posts on the category page
-```
-prototype(Breadlesscode.Blog:Document.Category) {
-    body = Neos.Fusion:Array {
-        headline = Neos.Fusion:Tag {
-            tagName = 'h1'
-            content = ${ 'Category: ' + q(node).property('title') }
-        }
-        list = Breadlesscode.Blog:Component.PostList {
-            paginated = true
-            itemsPerPage = 10
-            collection =  ${ q(site).find('[instanceof Breadlesscode.Blog:Document.Post]').filterByCategories([ node ]).get() }
-        }
-    }
-}
-```
 
 ## Reference
 Reference of some parts of the package.
@@ -80,7 +64,7 @@ All node types that this package provides.
     - [Breadlesscode.Blog:Mixin.Taggable](Configuration/NodeTypes.Mixin.Taggable.yaml)
     - [Breadlesscode.Blog:Mixin.Categorisable](Configuration/NodeTypes.Mixin.Categorisable.yaml)
     - [Breadlesscode.Commentable:Mixin.Commentable](https://github.com/breadlesscode/neos-commentable/blob/master/Configuration/NodeTypes.Mixin.Commentable.yaml)
- - [Breadlesscode.Blog:Document.Category](Configuration/NodeTypes.Document.Category.yaml) - Category
+ - [Breadlesscode.Blog:Document.CategoryBlog](Configuration/NodeTypes.Document.Category.yaml) - Category
  - [Breadlesscode.Blog:Document.Tag](Configuration/NodeTypes.Document.Tag.yaml) - Tag
 
 #### Content
@@ -98,8 +82,56 @@ All node types that this package provides.
  - [Breadlesscode.Blog:Document.Tag](Resources/Private/Fusion/Document/Tag.fusion) - The tag document node
 
 ### Configuration
-
+[Setting.yaml](Configuration/Settings.yaml)
 ```yaml
+Breadlesscode:
+  Blog:
+    comments:
+      confirmation:
+        # Confirmation message, if null confirmation message is disabled
+        message: 'Breadlesscode.Blog:Form.BlogComment:confirmation.message'
+      notification:
+        # enable mail on new comment
+        sendMail: false
+        # email subject
+        subject: 'New Comment!'
+        # the notification mail template path
+        template: 'resource://Breadlesscode.Blog/Private/Email/comment_notification.html'
+        # which is the recipient of the notification email
+        recipient:
+          email: null
+          name: null
+```
+
+#### SwiftMailer
+[Settings.yaml](https://github.com/neos/swiftmailer/blob/master/Configuration/Settings.yaml)
+```yaml
+Neos:
+  SwiftMailer:
+    transport:
+      type: 'Swift_MailTransport'
+      arguments: ~
+      options: []
+
+# Example settings for sending emails via SMTP / SSL:
+#
+# SwiftMailer:
+#   transport:
+#     type: 'Swift_SmtpTransport'
+#     options:
+#       host: 'smtp.example.com'
+#       port: 465
+#       username: 'myaccount@example.com'
+#       password: '5js9j1lkjs8'
+#       localDomain: 'example.com'
+
+# Example settings for "sending" emails to an mbox file:
+#
+# SwiftMailer:
+#   transport:
+#     type: 'Neos\SwiftMailer\Transport\MboxTransport'
+#     options:
+#       mboxPathAndFilename: '%FLOW_PATH_DATA%/Persistent/sent-mail'
 
 ```
 

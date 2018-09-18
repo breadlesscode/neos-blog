@@ -2,7 +2,6 @@
 namespace Breadlesscode\Blog\FlowQuery\Operations;
 
 use Neos\Eel\FlowQuery\FlowQuery;
-use Neos\Eel\FlowQuery\Operations\AbstractOperation;
 use Neos\Eel\FlowQuery\FlowQueryException;
 
 class FilterByCategoriesOperation extends FilterByReferencesOperation

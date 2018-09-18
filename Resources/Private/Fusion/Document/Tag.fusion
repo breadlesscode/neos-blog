@@ -2,8 +2,17 @@ prototype(Breadlesscode.Blog:Document.Tag) >
 prototype(Breadlesscode.Blog:Document.Tag) < prototype(Neos.Neos:Page) {
     body >
     body = Neos.Fusion:Tag {
-        @position = 'after bodyTag'
-        tagName = 'div'
-        content = ${ 'Tag: ' + q(node).property('title') }
+        attributes.class = 'blog-tag'
+        content = Neos.Fusion:Array {
+            headline = Neos.Fusion:Tag {
+                tagName = 'h1'
+                content = ${ Translation.translate('Breadlesscode.Blog:Main:tag.title') + ': ' + q(documentNode).property('title') }
+            }
+            list = Breadlesscode.Blog:Component.PostList {
+                paginated = true
+                itemsPerPage = 10
+                collection =  ${ q(site).find('[instanceof Breadlesscode.Blog:Document.Post]').filterByTags([ documentNode ]).get() }
+            }
+        }
     }
 }

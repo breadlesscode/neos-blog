@@ -1,0 +1,23 @@
+Neos:
+  Neos:
+    userInterface:
+      translation:
+        autoInclude:
+          'Breadlesscode.Blog':
+            - 'Form/*'
+            - 'NodeTypes/*'
+            - 'NodeTypes/Collection/*'
+            - 'NodeTypes/Content/*'
+            - 'NodeTypes/Document/*'
+            - 'NodeTypes/Mixin/*'
+    fusion:
+      autoInclude:
+        Breadlesscode.Blog: true
+    nodeTypes:
+      groups:
+        blog:
+          label: 'Blog'
+          icon: 'newspaper'
+  Fusion:
+    defaultContext:
+      'Blog': 'Breadlesscode\Blog\Eel\Helper\BlogHelper'

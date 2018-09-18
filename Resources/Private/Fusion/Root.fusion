@@ -1,5 +1,6 @@
 include: Component/**/*.fusion
 include: Content/**/*.fusion
+include: Form/**/*.fusion
 include: Document/**/*.fusion
 
 #
