@@ -1,4 +1,4 @@
-prototype(Breadlesscode.Commentable:Form.BlogComment) < prototype(Breadlesscode.Commentable:Form.Comment) {
+prototype(Breadlesscode.Blog:Form.BlogComment) < prototype(Breadlesscode.Commentable:Form.Comment) {
     finishers {
         sayThankYou = Neos.Form.Builder:ConfirmationFinisher.Definition {
             options {
