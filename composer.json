@@ -2,6 +2,7 @@
     "description": "Ready to use blog package",
     "type": "neos-plugin",
     "name": "breadlesscode/neos-blog",
+    "license": "MIT",
     "require": {
         "neos/flow": "*",
         "neos/neos": "~4.0",
