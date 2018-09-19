@@ -3,10 +3,12 @@
 	<file original="" product-name="Breadlesscode.Blog" source-language="en" target-language="de" datatype="plaintext">
         <body>
             <trans-unit id="ui.label" xml:space="preserve">
-                <source>Blogpost Liste</source>
+                <source>Blog post listing</source>
+                <target xml:lang="de">Blogpost Liste</target>
             </trans-unit>
             <trans-unit id="groups.blogPost" xml:space="preserve">
-                <source>Blogpost Liste</source>
+                <source>Blog post listing</source>
+                <target xml:lang="de">Blogpost Liste</target>
             </trans-unit>
         </body>
     </file>

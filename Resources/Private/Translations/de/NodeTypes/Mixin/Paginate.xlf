@@ -3,7 +3,8 @@
 	<file original="" product-name="Breadlesscode.Blog" source-language="en" target-language="de" datatype="plaintext">
         <body>
             <trans-unit id="properties.isPaginated" xml:space="preserve">
-                <source>Blätterfuntion?</source>
+                <source>Pagination?</source>
+                <target xml:lang="de">Blätterfunktion?</target>
             </trans-unit>
         </body>
     </file>

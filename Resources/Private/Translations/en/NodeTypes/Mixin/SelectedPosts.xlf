@@ -3,7 +3,7 @@
     <file original="" product-name="Breadlesscode.Blog" source-language="en" datatype="plaintext">
         <body>
             <trans-unit id="properties.selectedPosts" xml:space="preserve">
-                <source>Selected Posts</source>
+                <source>Posts to show</source>
             </trans-unit>
         </body>
     </file>

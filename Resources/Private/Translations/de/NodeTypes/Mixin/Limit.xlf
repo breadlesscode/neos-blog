@@ -3,7 +3,8 @@
 	<file original="" product-name="Breadlesscode.Blog" source-language="en" target-language="de" datatype="plaintext">
         <body>
             <trans-unit id="properties.limit" xml:space="preserve">
-                <source>Maximale Anzahl an Posts</source>
+                <source>Number of Posts</source>
+                <target  xml:lang="de">Maximale Anzahl an Posts</target>
             </trans-unit>
         </body>
     </file>

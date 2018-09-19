@@ -3,13 +3,18 @@
     <file original="" product-name="Breadlesscode.Blog" source-language="en" target-language="de" datatype="plaintext">
         <body>
             <trans-unit id="properties.categories" xml:space="preserve">
-                <source>Kategorien</source>
+                <source>Categories</source>
+                <target xml:lang="de">Kategorien</target>
             </trans-unit>
             <trans-unit id="properties.categories.ui.help.message">
                 <source>
                     Select a category for your blog post. If you cant select a category, you havent create one.
                     Create a new category by creating a new category page.
                 </source>
+                <target xml:lang="de">
+                    Wähle eine Kategorie für deinen Blogpost aus. Wenn noch keiner erstellt wurde, kann man über
+                    Seite anlegen eine neue Kategorie erstellen.
+                </target>
             </trans-unit>
         </body>
     </file>

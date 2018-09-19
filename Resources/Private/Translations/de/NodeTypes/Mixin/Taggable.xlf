@@ -4,11 +4,14 @@
         <body>
             <trans-unit id="properties.tags" xml:space="preserve">
                 <source>Tags</source>
+                <target xml:lang="de">Tags</target>
             </trans-unit>
             <trans-unit id="properties.tags.ui.help.message">
                 <source>Select a tags for your blog post. If you cant select a tag, you havent created one.
                     Create a new tag by creating a new tag page.
                 </source>
+                <target xml:lang="de">Wähle Tags für diesen Blogpost aus. Wenn noch keine Tags erstellt wurden,
+                    kann man dies einfach über Seite erstellen erledigen.</target>
             </trans-unit>
         </body>
     </file>

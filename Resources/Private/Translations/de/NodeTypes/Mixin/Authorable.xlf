@@ -3,7 +3,8 @@
     <file original="" product-name="Breadlesscode.Blog" source-language="en" target-language="de" datatype="plaintext">
         <body>
             <trans-unit id="properties.author" xml:space="preserve">
-                <source>Autor</source>
+                <source>Author</source>
+                <target xml:lang="de">Autor</target>
             </trans-unit>
         </body>
     </file>
