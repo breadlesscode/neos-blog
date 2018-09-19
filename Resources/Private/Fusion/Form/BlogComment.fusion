@@ -9,7 +9,6 @@ prototype(Breadlesscode.Blog:Form.BlogComment) < prototype(Breadlesscode.Comment
                 templatePathAndFilename = ${ Configuration.setting('Breadlesscode.Blog.comments.notification.template') }
                 senderAddress = '{email}'
                 senderName = '{name}'
-                testMode = ${ true }
                 variables = Neos.Fusion:RawArray {
                     post = ${ documentNode }
                 }
