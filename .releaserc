@@ -7,7 +7,7 @@
         {
             "path": "@semantic-release/changelog",
             "changelogFile": "CHANGELOG.md",
-            "changelogTitle": "Changelog Noerdisch/NeosSlick"
+            "changelogTitle": "Changelog breadlesscode/neos-blog"
         },
         "@semantic-release/github"
     ],
