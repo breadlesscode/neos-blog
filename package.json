@@ -1,0 +1,27 @@
+{
+    "name": "neos-slick",
+    "version": "0.0.0",
+    "repository": "git@github.com:breadlesscode/neos-blog.git",
+    "license": "MIT",
+    "dependencies": {
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 0",
+        "semantic-release": "semantic-release",
+        "commit": "git-cz"
+    },
+    "devDependencies": {
+        "@semantic-release/changelog": "^3.0.0",
+        "@semantic-release/git": "^7.0.4",
+        "@semantic-release/release-notes-generator": "^7.0.2",
+        "commitizen": "^2.10.1",
+        "conventional-changelog-eslint": "^3.0.0",
+        "cz-adapter-eslint": "^0.1.2",
+        "semantic-release": "^15.9.15"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-adapter-eslint"
+        }
+    }
+}

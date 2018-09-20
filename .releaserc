@@ -1,0 +1,30 @@
+{
+    "branch": "master",
+    "analyzeCommits": {
+        "preset": "eslint"
+    },
+    "verifyConditions": [
+        {
+            "path": "@semantic-release/changelog",
+            "changelogFile": "CHANGELOG.md",
+            "changelogTitle": "Changelog Noerdisch/NeosSlick"
+        },
+        "@semantic-release/github"
+    ],
+    "prepare": [
+        "@semantic-release/changelog",
+        "@semantic-release/npm",
+        {
+            "path": "@semantic-release/git",
+            "assets": ["package.json", "Resources/Public", "CHANGELOG.md"],
+            "message": "Build: Release ${nextRelease.version} [skip ci]"
+        }
+    ],
+    "generateNotes": {
+      "preset": "eslint",
+      "writerOpts": {
+        "commitsSort": ["subject", "scope"],
+      }
+    },
+    "publish": ["@semantic-release/github"]
+}
