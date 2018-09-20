@@ -137,7 +137,7 @@ Neos:
 
 ## Contribution
 
-We'd love you to contribute to neos-slick. We try to make it as easy as possible.
+We'd love you to contribute to neos-blog. We try to make it as easy as possible.
 We are using semantic-release to have more time to concentrate on important stuff
 instead of struggling in the dependency or release hell.
 
