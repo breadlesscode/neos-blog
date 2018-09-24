@@ -13,6 +13,7 @@ This Neos CMS plugin is for a simple blog functionality.
  - Comments
  - Listing with pagination
 
+
 ## Installation
 Most of the time you have to make small adjustments to a package (e.g., the configuration in Settings.yaml). Because of that, it is important to add the corresponding package to the composer from your theme package. Mostly this is the site package located under Packages/Sites/. To install it correctly go to your theme package (e.g.Packages/Sites/Foo.Bar) and run following command:
 
@@ -21,6 +22,14 @@ composer require breadlesscode/neos-blog --no-update
 ```
 
 The --no-update command prevent the automatic update of the dependencies. After the package was added to your theme composer.json, go back to the root of the Neos installation and run composer update. Your desired package is now installed correctly.
+ 
+## Sponsors
+
+<p >
+    <a href="https://www.noerdisch.de" target="_blank">
+        <img src="https://cdn.rawgit.com/markusguenther/abe70d34f4a4621aed0ef504c5d0192b/raw/5bf0f3df328e58ba7aad067a56cbd1c15ef69491/logo_full.svg" width="200">
+    </a>
+</p>
 
 ## Examples
 ### List latest posts
