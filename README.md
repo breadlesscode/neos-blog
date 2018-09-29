@@ -1,7 +1,9 @@
 # Neos Blog 
-[![Latest Stable Version](https://poser.pugx.org/breadlesscode/neos-blog/v/stable)](https://packagist.org/packages/breadlesscode/neos-blog)
+
+[![Packagist](https://img.shields.io/packagist/v/breadlesscode/neos-blog.svg?style=flat-square)](https://packagist.org/packages/breadlesscode/neos-blog)
 [![Downloads](https://img.shields.io/packagist/dt/breadlesscode/neos-blog.svg)](https://packagist.org/packages/breadlesscode/neos-blog)
-[![License](https://img.shields.io/github/license/breadlesscode/neos-blog.svg)](LICENSE)
+[![Packagist](https://img.shields.io/packagist/l/breadlesscode/neos-blog.svg?style=flat-square)](https://packagist.org/packages/breadlesscode/neos-blog)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![GitHub stars](https://img.shields.io/github/stars/breadlesscode/neos-blog.svg?style=social&label=Stars)](https://github.com/breadlesscode/neos-blog/stargazers)
 [![GitHub watchers](https://img.shields.io/github/watchers/breadlesscode/neos-blog.svg?style=social&label=Watch)](https://github.com/breadlesscode/neos-blog/subscription)
 
