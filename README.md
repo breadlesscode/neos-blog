@@ -8,9 +8,10 @@
 This Neos CMS plugin is for a simple blog functionality.
 
 ## Features
- - Blog categories
+ - Categories
  - Tags
  - Comments
+ - Author page
  - Listing with pagination
 
 
@@ -45,15 +46,23 @@ prototype(Vendor.Xy:RecentBlogPosts) < prototype(Breadlesscode.Blog:Component.Po
 Reference of some parts of the package.
 
 ### FlowQuery-Oprations
+
 ### filterByTags(*&lt;tags&gt;*)
 You can filter a collection of nodes by tags. Example:
 ```
 ${ q(site).find('[instanceof Breadlesscode.Blog:Document.Post]').fliterByTags(q(node).property('tags')).get() }
 ```
+
 ### filterByCategories(*&lt;categories&gt;*)
 You can filter a collection of nodes by tags. Example:
 ```
 ${ q(site).find('[instanceof Breadlesscode.Blog:Document.Post]').filterByCategories(q(node).property('categories')).get() }
+```
+
+### filterByAuthor(*&lt;user-identifier&gt;*)
+You can filter a collection of nodes by the author. Example:
+```
+${ q(site).find('[instanceof Breadlesscode.Blog:Document.Post]').filterByAuthor(q(node).property('author')).get() }
 ```
 
 ### Eel Helper
@@ -75,6 +84,7 @@ All node types that this package provides.
     - [Breadlesscode.Commentable:Mixin.Commentable](https://github.com/breadlesscode/neos-commentable/blob/master/Configuration/NodeTypes.Mixin.Commentable.yaml)
  - [Breadlesscode.Blog:Document.CategoryBlog](Configuration/NodeTypes.Document.Category.yaml) - Category
  - [Breadlesscode.Blog:Document.Tag](Configuration/NodeTypes.Document.Tag.yaml) - Tag
+ - [Breadlesscode.Blog:Document.Author](Configuration/NodeTypes.Document.Author.yaml) - Author
 
 #### Content
  - [Breadlesscode.Blog:Content.PostListing](Configuration/NodeTypes.Content.PostListing.yaml) - Listing of blog posts

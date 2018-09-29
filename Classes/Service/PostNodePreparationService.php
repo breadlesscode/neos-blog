@@ -25,6 +25,11 @@ class PostNodePreparationService
     const DOCUMENT_POST_TYPE = 'Breadlesscode.Blog:Document.Post';
 
     /**
+     * author page node type
+     */
+    const DOCUMENT_AUTHOR_TYPE = 'Breadlesscode.Blog:Document.Author';
+
+    /**
      * @Flow\Inject
      * @var \Neos\Neos\Domain\Service\UserService
      */

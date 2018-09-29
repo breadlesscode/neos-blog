@@ -8,6 +8,9 @@
             <trans-unit id="tag.title" xml:space="preserve">
                 <source>Tag</source>
             </trans-unit>
+            <trans-unit id="author.title" xml:space="preserve">
+                <source>Author</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
