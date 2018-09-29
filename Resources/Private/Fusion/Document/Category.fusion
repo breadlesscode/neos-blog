@@ -2,7 +2,7 @@ prototype(Breadlesscode.Blog:Document.CategoryBlog) >
 prototype(Breadlesscode.Blog:Document.CategoryBlog) < prototype(Neos.Neos:Page) {
     body >
     body = Neos.Fusion:Tag {
-        attributes.class = 'blog-tag'
+        attributes.class = 'blog-category'
         content = Neos.Fusion:Array {
             headline = Neos.Fusion:Tag {
                 tagName = 'h1'
