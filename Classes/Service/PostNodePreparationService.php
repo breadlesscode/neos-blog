@@ -54,7 +54,22 @@ class PostNodePreparationService
         }
 
         $this->setAuthorOfPostNodeToCurrentUser($node);
-        $this->setCategoryOfPostNodeToParentCategory($node);
+        $this->addParentCategoryToPostNode($node);
+    }
+
+    /**
+     * this functions listens to the nodeMoved event
+     *
+     * @param NodeInterface $node
+     * @throws \Neos\Eel\Exception
+     */
+    public function beforeNodeMoved(NodeInterface $node)
+    {
+        if (!$node->getNodeType()->isOfType(self::DOCUMENT_POST_TYPE)) {
+            return;
+        }
+
+        $this->removeParentCategoryFromPostNode($node);
     }
 
     /**
@@ -69,7 +84,7 @@ class PostNodePreparationService
             return;
         }
 
-        $this->setCategoryOfPostNodeToParentCategory($node);
+        $this->addParentCategoryToPostNode($node);
     }
 
     /**
@@ -93,12 +108,41 @@ class PostNodePreparationService
      * @return void
      * @throws \Neos\Eel\Exception
      */
-    protected function setCategoryOfPostNodeToParentCategory(NodeInterface $node)
+    protected function removeParentCategoryFromPostNode(NodeInterface $node)
     {
-        $parentCategories =  (new FlowQuery([$node]))
+        $parentCategory =  (new FlowQuery([$node]))
             ->parent('[instanceof '. self::DOCUMENT_CATEGORY_TYPE .']')
-            ->get();
+            ->get(0);
 
-        $node->setProperty('categories', $parentCategories);
+        if ($parentCategory !== null) {
+            $categories = $node->getProperty('categories');
+            $index = array_search($parentCategory, $categories, true);
+            if ($index !== false) {
+                array_splice($categories, $index, 1);
+                $node->setProperty('categories', $categories);
+            }
+        }
+    }
+
+    /**
+     * sets the parent category to the category property of the blog post node
+     *
+     * @param NodeInterface $node
+     * @return void
+     * @throws \Neos\Eel\Exception
+     */
+    protected function addParentCategoryToPostNode(NodeInterface $node)
+    {
+        $parentCategory =  (new FlowQuery([$node]))
+            ->parent('[instanceof '. self::DOCUMENT_CATEGORY_TYPE .']')
+            ->get(0);
+
+        if ($parentCategory !== null) {
+            $categories = $node->getProperty('categories');
+            if (array_search($parentCategory, $categories, true) === false) {
+                $categories[] = $parentCategory;
+                $node->setProperty('categories', $categories);
+            }
+        }
     }
 }
