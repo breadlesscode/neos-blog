@@ -1,6 +1,6 @@
 {
     "name": "neos-blog",
-    "version": "1.1.1",
+    "version": "1.2.0",
     "repository": "git@github.com:breadlesscode/neos-blog.git",
     "license": "MIT",
     "dependencies": {},

@@ -1,3 +1,14 @@
+# [1.2.0](https://github.com/breadlesscode/neos-blog/compare/v1.1.1...v1.2.0) (2018-10-11)
+
+
+### Docs
+
+* Adjust badges ([72d11093f307b690d44b89cf687a49bdba87d992](https://github.com/breadlesscode/neos-blog/commit/72d11093f307b690d44b89cf687a49bdba87d992))
+
+### New
+
+* Use translated date formats ([7df3efd85ad3704b7d74b4717e45bf79328a9cc3](https://github.com/breadlesscode/neos-blog/commit/7df3efd85ad3704b7d74b4717e45bf79328a9cc3)), closes [#6](https://github.com/breadlesscode/neos-blog/issues/6)
+
 ## [1.1.1](https://github.com/breadlesscode/neos-blog/compare/v1.1.0...v1.1.1) (2018-09-29)
 
 
