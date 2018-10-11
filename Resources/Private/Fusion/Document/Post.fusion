@@ -27,7 +27,7 @@ prototype(Breadlesscode.Blog:Document.Post) < prototype(Neos.Neos:Page) {
                             createdBy = ${  author.label + ' &bull; ' }
                             createdAt = Neos.Fusion:Tag {
                                 tagName = 'time'
-                                content = ${Date.format(q(node).property('datePublished'), 'r')}
+                                content = ${Date.formatCldr(q(node).property('datePublished'), 'E, dd. MMMM y H:mm:ss (zzzz)')}
                             }
                         }
                         content.@process.wrapInParagraph = ${ '<p>' + value + '</p>' }
