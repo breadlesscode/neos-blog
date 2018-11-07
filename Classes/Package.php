@@ -24,6 +24,12 @@ class Package extends BasePackage
         );
         $dispatcher->connect(
             'Neos\ContentRepository\Domain\Model\Node',
+            'beforeNodeMove',
+            'Breadlesscode\Blog\Service\PostNodePreparationService',
+            'beforeNodeMoved'
+        );
+        $dispatcher->connect(
+            'Neos\ContentRepository\Domain\Model\Node',
             'afterNodeMove',
             'Breadlesscode\Blog\Service\PostNodePreparationService',
             'afterNodeMoved'
