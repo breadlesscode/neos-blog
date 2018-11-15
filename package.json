@@ -10,13 +10,13 @@
         "commit": "git-cz"
     },
     "devDependencies": {
-        "@semantic-release/changelog": "^3.0.0",
-        "@semantic-release/git": "^7.0.4",
-        "@semantic-release/release-notes-generator": "^7.0.2",
+        "@semantic-release/changelog": "^3.0.1",
+        "@semantic-release/git": "^7.0.5",
+        "@semantic-release/release-notes-generator": "^7.1.4",
         "commitizen": "^2.10.1",
         "conventional-changelog-eslint": "^3.0.0",
         "cz-adapter-eslint": "^0.1.2",
-        "semantic-release": "^15.9.15"
+        "semantic-release": "^15.12.0"
     },
     "config": {
         "commitizen": {
