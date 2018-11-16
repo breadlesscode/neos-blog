@@ -1,3 +1,14 @@
+# [1.3.0](https://github.com/breadlesscode/neos-blog/compare/v1.2.0...v1.3.0) (2018-11-16)
+
+
+### TASK
+
+* Update category-change on move of posts ([5e01140757e25b92f0912e8a5eb66be56e7f25f1](https://github.com/breadlesscode/neos-blog/commit/5e01140757e25b92f0912e8a5eb66be56e7f25f1))
+
+### Update
+
+* Update semantic-release packages to the latest version ([7528a4b886cbeddd9b0afc0a396fad8b6d30db7e](https://github.com/breadlesscode/neos-blog/commit/7528a4b886cbeddd9b0afc0a396fad8b6d30db7e))
+
 # [1.2.0](https://github.com/breadlesscode/neos-blog/compare/v1.1.1...v1.2.0) (2018-10-11)
 
 
