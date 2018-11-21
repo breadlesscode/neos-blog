@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/breadlesscode/neos-blog/compare/v1.3.1...v1.3.2) (2018-11-21)
+
+
+### Fix
+
+* fixed exception on create new blog post ([725cb93ce21e10ed14368dda306cc70dcd2bafd5](https://github.com/breadlesscode/neos-blog/commit/725cb93ce21e10ed14368dda306cc70dcd2bafd5))
+
 # [1.3.0](https://github.com/breadlesscode/neos-blog/compare/v1.2.0...v1.3.0) (2018-11-16)
 
 
