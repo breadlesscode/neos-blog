@@ -138,7 +138,7 @@ class PostNodePreparationService
             ->get(0);
 
         if ($parentCategory !== null) {
-            $categories = $node->getProperty('categories');
+            $categories = $node->getProperty('categories') ?? [];
             if (array_search($parentCategory, $categories, true) === false) {
                 $categories[] = $parentCategory;
                 $node->setProperty('categories', $categories);
