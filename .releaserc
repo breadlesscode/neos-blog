@@ -1,7 +1,10 @@
 {
     "branch": "master",
     "analyzeCommits": {
-        "preset": "eslint"
+        "preset": "eslint",
+        "releaseRules": [
+            {"type": "Upgrade", "release": "patch"}
+        ]
     },
     "verifyConditions": [
         {
