@@ -3,7 +3,7 @@
     "analyzeCommits": {
         "preset": "eslint",
         "releaseRules": [
-            {"type": "Upgrade", "release": "patch"}
+            {"tag": "Upgrade", "release": "patch"}
         ]
     },
     "verifyConditions": [
