@@ -1,0 +1,13 @@
+prototype(Breadlesscode.Blog:Component.PostContent) < prototype(Neos.Fusion:Component) {
+    headline = ${ q(documentNode).property('title') }
+    nodePath = 'main'
+
+    renderer = afx`
+      <div class="blog_post__content">
+        <h1 class="blog_post__title">{props.headline}</h1>
+        <Neos.Neos:ContentCollection
+          nodePath={props.nodePath}
+          attributes.class="blog_post__content" />
+      </div>
+    `
+}

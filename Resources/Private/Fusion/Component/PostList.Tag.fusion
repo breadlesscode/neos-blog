@@ -1,0 +1,19 @@
+prototype(Breadlesscode.Blog:Component.PostList.Tag) < prototype(Neos.Fusion:Component) {
+    tag = ${ documentNode }
+    headline = ${ Translation.translate('Breadlesscode.Blog:Main:tag.title') + ': ' + q(documentNode).property('title') }
+    itemsPerPage = 10
+    paginated = true
+
+    renderer = Neos.Fusion:Array {
+        headline = Neos.Fusion:Tag {
+            tagName = 'h1'
+            content =  ${ props.headline }
+            @if.hasHeadline = ${ props.headline }
+        }
+        list = Breadlesscode.Blog:Component.PostList {
+            paginated = ${ props.paginated }
+            itemsPerPage = ${ props.itemsPerPage }
+            collection =  ${ q(site).find('[instanceof Breadlesscode.Blog:Document.Post]').filterByTags([ props.tag ]).get() }
+        }
+    }
+}

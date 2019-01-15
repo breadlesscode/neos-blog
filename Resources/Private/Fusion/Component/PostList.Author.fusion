@@ -1,0 +1,20 @@
+prototype(Breadlesscode.Blog:Component.PostList.Author) < prototype(Neos.Fusion:Component) {
+    author = ${ documentNode }
+    headline = ${ Translation.translate('Breadlesscode.Blog:Main:author.title') + ': ' + q(this.author).property('title') }
+    itemsPerPage = 10
+    paginated = true
+
+    renderer = Neos.Fusion:Array {
+        @context.author = ${ props.author }
+        headline = Neos.Fusion:Tag {
+            tagName = 'h1'
+            content = ${ props.headline }
+            @if.hasHeadline = ${ props.headline }
+        }
+        list = Breadlesscode.Blog:Component.PostList {
+            paginated = ${ props.paginated }
+            itemsPerPage = ${ props.itemsPerPage }
+            collection = ${ q(site).find('[instanceof Breadlesscode.Blog:Document.Post]').filterByAuthor(author).get() }
+        }
+    }
+}
