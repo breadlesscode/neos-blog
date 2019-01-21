@@ -2,5 +2,5 @@ prototype(Breadlesscode.Blog:Component.PostList) < prototype(Breadlesscode.Lista
     itemRenderer = 'Breadlesscode.Blog:Component.PostListItem'
     itemsPerPage = 10
     paginated = ${ true }
-    collection = ${ [] }
+    collection = ${ q(site).find('[instanceof Breadlesscode.Blog:Document.Post]').get() }
 }
