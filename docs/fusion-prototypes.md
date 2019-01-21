@@ -29,7 +29,7 @@ This prototype is for displaying all kind of post lists.
 ### Properties
 | Name         | Default value                          | Description                                                                            |
 | ------------ | -------------------------------------- | -------------------------------------------------------------------------------------- |
-| author       | `${ documentNode }`                    | this property is for the author or authors which should filtered by                    |
+| author       | `${ documentNode }`                    | this property is for the author (user identifier) which should filtered by                    |
 | headline     | `${q(documentNode).property('title')}` | headline displayed on top of this list. Can be disabled by setting property to `false` |
 | itemsPerPage | `5`                                    | Defines how many items/posts per page are shown                                        |
 | paginated    | `true`                                 | List pagination flag, if is false, pagination is disabled                              |
