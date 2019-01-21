@@ -19,3 +19,11 @@ Breadlesscode:
           email: null
           name: null
 ```
+
+## Pagination
+
+See this documentation: [https://github.com/breadlesscode/neos-listable#configuration](https://github.com/breadlesscode/neos-listable#configuration)
+
+## (Swift)Mailer
+
+See this documentation: [https://swiftmailer-for-flow.readthedocs.io/en/latest/#configuration](https://swiftmailer-for-flow.readthedocs.io/en/latest/#configuration)
