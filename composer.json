@@ -43,7 +43,7 @@
             "CODE_OF_CONDUCT.md",
             "package.json",
             "yarn.lock",
-            "Documentation"
+            "docs"
         ]
     },
     "extra": {
