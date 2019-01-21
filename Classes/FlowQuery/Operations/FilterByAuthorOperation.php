@@ -30,21 +30,22 @@ class FilterByAuthorOperation extends AbstractOperation
      */
     public function evaluate(FlowQuery $flowQuery, array $arguments)
     {
-        if (!is_string($arguments[0]) || $this->isAuthorDocumentNode($arguments[0])) {
+        if (!is_string($arguments[0]) && !$this->isAuthorDocumentNode($arguments[0])) {
             throw new FlowQueryException('The first parameter of '.self::$shortName.' should be a string or a node of type '.self::AUTHOR_DOCUMENT_NODETYPE.'.');
         }
 
         if ($arguments[0] instanceof NodeInterface) {
-            $arguments[0] = $userIdentifier->getProperty('user');
+            $arguments[0] = $arguments[0]->getProperty('user');
         }
 
         if ($arguments[0] === false || $arguments[0] === null || $arguments[0] === '') {
             return;
         }
 
-        $context = \array_filter($flowQuery->getContext(), function(NodeInterface $node) use ($arguments) {
+        $context = \array_filter($flowQuery->getContext(), function (NodeInterface $node) use ($arguments) {
             return $node->getProperty('author') === $arguments[0];
         });
+
         $flowQuery->setContext($context);
     }
 
