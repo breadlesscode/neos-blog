@@ -1,0 +1,14 @@
+'Breadlesscode.Blog:Mixin.Excerpt':
+  abstract: true
+  properties:
+    excerpt:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'i18n'
+        reloadIfChanged: true
+        inspector:
+          group: 'blogPost'
+          editor: 'Neos.Neos/Inspector/Editors/TextAreaEditor'
+          editorOptions:
+            rows: 6

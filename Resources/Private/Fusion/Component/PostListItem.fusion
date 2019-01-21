@@ -1,9 +1,0 @@
-prototype(Breadlesscode.Blog:Component.PostListItem) < prototype(Neos.Fusion:Component) {
-    renderer = afx`
-      <article class="blog_post_short">
-        <h2 class="blog_post_short__title">
-          <Breadlesscode.Listable:ListItem />
-        </h2>
-      </article>
-    `
-}
