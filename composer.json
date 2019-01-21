@@ -42,7 +42,8 @@
             ".travis.yml",
             "CODE_OF_CONDUCT.md",
             "package.json",
-            "yarn.lock"
+            "yarn.lock",
+            "Documentation"
         ]
     },
     "extra": {

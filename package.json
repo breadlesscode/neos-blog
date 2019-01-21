@@ -7,6 +7,8 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 0",
         "semantic-release": "semantic-release",
+        "docs:dev": "vuepress dev Documentation",
+        "docs:build": "vuepress build Documentation",
         "commit": "git-cz"
     },
     "devDependencies": {
@@ -16,7 +18,8 @@
         "commitizen": "^3.0.4",
         "conventional-changelog-eslint": "^3.0.1",
         "cz-adapter-eslint": "^0.1.2",
-        "semantic-release": "^15.12.0"
+        "semantic-release": "^15.12.0",
+        "vuepress": "^0.14.8"
     },
     "config": {
         "commitizen": {
