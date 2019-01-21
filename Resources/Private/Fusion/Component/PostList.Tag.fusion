@@ -1,5 +1,6 @@
 prototype(Breadlesscode.Blog:Component.PostList.Tag) < prototype(Neos.Fusion:Component) {
     tag = ${ documentNode }
+    tag.@process.convertToArray = Breadlesscode.Blog:Helper.ConvertToArray
     headline = ${ Translation.translate('Breadlesscode.Blog:Main:tag.title') + ': ' + q(documentNode).property('title') }
     itemsPerPage = 10
     paginated = true
@@ -11,5 +12,5 @@ prototype(Breadlesscode.Blog:Component.PostList.Tag) < prototype(Neos.Fusion:Com
             itemsPerPage={ props.itemsPerPage }
             collection={ posts } />
     `
-    renderer.@context.posts = ${ q(site).find('[instanceof Breadlesscode.Blog:Document.Post]').filterByTags([ props.tag ]).get() }
+    renderer.@context.posts = ${ q(site).find('[instanceof Breadlesscode.Blog:Document.Post]').filterByTags(props.tag).get() }
 }
