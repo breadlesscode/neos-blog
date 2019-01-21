@@ -2,6 +2,15 @@
 
 **Attention:** All Fusion prototypes are prefixed with `Breadlesscode.Blog:`. You cant use `Component.PostList` e.g. in your fusion code. You have to use `Breadlesscode.Blog:Component.PostList`.
 
+## `Component.CommentSection`
+This prototype displays the commenting form and the comments.
+
+### Properties
+
+| Name         | Default value | Description |
+| ------------ | ------------- | ----------- |
+| formPosition | `'top'`       | this property defines the position of the commenting form. If its set to `'top'` its displayed on top of the comments. If the value is `'bottom'`, its the other way round. |
+
 ## `Component.PostList`
 This prototype is for displaying all kind of post lists.
 
