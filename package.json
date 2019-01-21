@@ -7,8 +7,8 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 0",
         "semantic-release": "semantic-release",
-        "docs:dev": "vuepress dev Documentation",
-        "docs:build": "vuepress build Documentation",
+        "docs:dev": "vuepress dev docs",
+        "docs:build": "vuepress build docs",
         "commit": "git-cz"
     },
     "devDependencies": {

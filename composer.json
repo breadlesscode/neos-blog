@@ -23,6 +23,7 @@
     "require": {
         "neos/flow": "*",
         "neos/neos": "~4.0",
+        "neos/fusion-afx": "~1.0",
         "neos/swiftmailer": "~6.0",
         "breadlesscode/neos-commentable": "~1.1",
         "breadlesscode/neos-listable": "~1.2"
@@ -38,6 +39,7 @@
             ".gitattributes",
             ".github",
             ".gitignore",
+            ".releaserc",
             ".nvmrc",
             ".travis.yml",
             "CODE_OF_CONDUCT.md",

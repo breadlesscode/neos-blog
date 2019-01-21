@@ -10,7 +10,10 @@ module.exports = {
     sidebar: [
       ["/", "Home"],
       ["/configuration.html", "Configuration"],
-      ["/fusion-prototypes.html", "Fusion prototypes"]
+      ["/fusion-prototypes.html", "Fusion prototypes"],
+      ["/nodetypes.html", "NodeTypes"],
+      ["/flowquery.html", "FlowQuery"],
+      ["/how-tos.md", "How-Tos"]
     ]
   }
 };

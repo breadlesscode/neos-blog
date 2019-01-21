@@ -7,4 +7,6 @@ include: Document/**/*.fusion
 # Have fun by using this package
 # If you see an issue please report it here:
 #   https://github.com/breadlesscode/neos-blog/issues
+# Documentation:
+#   https://breadlesscode.github.io/neos-blog
 #
