@@ -1,8 +1,9 @@
 prototype(Breadlesscode.Blog:Document.Author) >
 prototype(Breadlesscode.Blog:Document.Author) < prototype(Neos.Neos:Page) {
     body >
-    body = Neos.Fusion:Tag {
-        attributes.class = 'blog-tag'
-        content = Breadlesscode.Blog:Component.PostList.Author
-    }
+    body = afx`
+      <div class="blog-author">
+        <Breadlesscode.Blog:Component.PostList.Author />
+      </div>
+    `
 }

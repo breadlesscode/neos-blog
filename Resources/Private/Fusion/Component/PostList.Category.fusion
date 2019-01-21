@@ -4,16 +4,12 @@ prototype(Breadlesscode.Blog:Component.PostList.Category) < prototype(Neos.Fusio
     itemsPerPage = 10
     paginated = true
 
-    renderer = Neos.Fusion:Array {
-        headline = Neos.Fusion:Tag {
-            tagName = 'h1'
-            content = ${ props.headline }
-            @if.hasHeadline = ${ props.headline }
-        }
-        list = Breadlesscode.Blog:Component.PostList {
-            paginated = ${ props.paginated }
-            itemsPerPage = ${ props.itemsPerPage }
-            collection = ${ q(site).find('[instanceof Breadlesscode.Blog:Document.Post]').filterByCategories([ props.category ]).get() }
-        }
-    }
+    renderer = afx`
+        <h1 @if.hasHeadline={ props.headline }>{ props.headline }</h1>
+        <Breadlesscode.Blog:Component.PostList
+            paginated={ props.paginated }
+            itemsPerPage={ props.itemsPerPage }
+            collection={ posts } />
+    `
+    renderer.@context.posts = ${ q(site).find('[instanceof Breadlesscode.Blog:Document.Post]').filterByCategories([ props.category ]).get() }
 }
