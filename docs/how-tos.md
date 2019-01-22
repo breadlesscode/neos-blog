@@ -1,5 +1,5 @@
 # How-Tos
-*more comming soon*
+*more coming soon*
 
 ## How to add a finisher to the comment form?
 This packages uses the [breadlesscode/neos-commentable](https://github.com/breadlesscode/neos-commentable) package which is using the [neos/form-fusionrenderer](https://github.com/neos/form-fusionrenderer) package. You can easily add finishers like this:

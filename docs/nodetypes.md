@@ -1,5 +1,5 @@
 # NodeTypes
-All node types that this package provides.
+All node types the package provides.
 
 ## Document
 ### `Breadlesscode.Blog:Document.Post`

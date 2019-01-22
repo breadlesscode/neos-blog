@@ -1,15 +1,15 @@
 # Fusion prototypes
 
-**Attention:** All Fusion prototypes are prefixed with `Breadlesscode.Blog:`. You cant use `Component.PostList` e.g. in your fusion code. You have to use `Breadlesscode.Blog:Component.PostList`.
+**Attention:** All Fusion prototypes are prefixed with `Breadlesscode.Blog:`. You can't use `Component.PostList` e.g. in your fusion code. You have to use `Breadlesscode.Blog:Component.PostList`.
 
 ## `Component.CommentSection`
-This prototype displays the commenting form and the comments.
+This prototype displays the comment form and the comments.
 
 ### Properties
 
 | Name         | Default value | Description |
 | ------------ | ------------- | ----------- |
-| formPosition | `'top'`       | this property defines the position of the commenting form. If its set to `'top'` its displayed on top of the comments. If the value is `'bottom'`, its the other way round. |
+| formPosition | `'top'`       | Defines the position of the comment form. If it's set to `'top'` it's displayed on top of the comments. If the value is `'bottom'`, it's the other way round. |
 
 ## `Component.PostList`
 This prototype is for displaying all kind of post lists.
@@ -17,8 +17,8 @@ This prototype is for displaying all kind of post lists.
 ### Properties
 | Name         | Default value                                                              | Description                                                                            |
 | ------------ | -------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| collection   | `${ q(site).find('[instanceof Breadlesscode.Blog:Document.Post]').get() }` | this property should contain all post items you want to display                        |
-| headline     | `${q(documentNode).property('title')}`                                     | headline displayed on top of this list. Can be disabled by setting property to `false` |
+| collection   | `${ q(site).find('[instanceof Breadlesscode.Blog:Document.Post]').get() }` | Should contain all post items you want to display                        |
+| headline     | `${q(documentNode).property('title')}`                                     | Headline displayed on top of this list. Can be disabled by setting property to `false` |
 | itemsPerPage | `5`                                                                        | Defines how many items/posts per page are shown                                        |
 | paginated    | `true`                                                                     | List pagination flag, if is false, pagination is disabled                              |
 
@@ -29,8 +29,8 @@ This prototype is for displaying all kind of post lists.
 ### Properties
 | Name         | Default value                          | Description                                                                            |
 | ------------ | -------------------------------------- | -------------------------------------------------------------------------------------- |
-| author       | `${ documentNode }`                    | this property is for the author (user identifier) which should filtered by                    |
-| headline     | `${q(documentNode).property('title')}` | headline displayed on top of this list. Can be disabled by setting property to `false` |
+| author       | `${ documentNode }`                    | Filters posts by author (user identifier)                                              |
+| headline     | `${q(documentNode).property('title')}` | Headline displayed on top of this list. Can be disabled by setting property to `false` |
 | itemsPerPage | `5`                                    | Defines how many items/posts per page are shown                                        |
 | paginated    | `true`                                 | List pagination flag, if is false, pagination is disabled                              |
 
@@ -40,8 +40,8 @@ This prototype is for displaying all kind of post lists.
 ### Properties
 | Name         | Default value                          | Description                                                                           |
 | ------------ | -------------------------------------- | ------------------------------------------------------------------------------------- |
-| category     | `${ documentNode }`                    | this property is for the cetegory or categories which should filtered by              |
-| headline     | `${q(documentNode).property('title')}` | headline displayed ontop of this list. Can be disabled by setting property to `false` |
+| category     | `${ documentNode }`                    | Filters posts by one or more categories                                               |
+| headline     | `${q(documentNode).property('title')}` | Headline displayed ontop of this list. Can be disabled by setting property to `false` |
 | itemsPerPage | `5`                                    | Defines how many items/posts per page are shown                                       |
 | paginated    | `true`                                 | List pagination flag, if is false, pagination is disabled                             |
 
@@ -51,7 +51,7 @@ This prototype is for displaying all kind of post lists.
 ### Properties
 | Name         | Default value                          | Description                                                                            |
 | ------------ | -------------------------------------- | -------------------------------------------------------------------------------------- |
-| tag          | `${ documentNode }`                    | this property is for the tag or tags which should filtered by                          |
+| tag          | `${ documentNode }`                    | Filters posts by tag or tags                                                           |
 | headline     | `${q(documentNode).property('title')}` | headline displayed on top of this list. Can be disabled by setting property to `false` |
 | itemsPerPage | `5`                                    | Defines how many items/posts per page are shown                                        |
 | paginated    | `true`                                 | List pagination flag, if is false, pagination is disabled                              |
@@ -62,7 +62,7 @@ This prototype represents one item in the post list.
 ### Properties
 | Name         | Default value                          | Description                                                                            |
 | ------------ | -------------------------------------- | -------------------------------------------------------------------------------------- |
-| tag          | `${ documentNode }`                    | this property is for the tag or tags which should filtered by                          |
-| headline     | `${q(documentNode).property('title')}` | headline displayed on top of this list. Can be disabled by setting property to `false` |
+| tag          | `${ documentNode }`                    | Filters posts by tag or tags                          |
+| headline     | `${q(documentNode).property('title')}` | Headline displayed on top of this list. Can be disabled by setting property to `false` |
 | itemsPerPage | `5`                                    | Defines how many items/posts per page are shown                                        |
 | paginated    | `true`                                 | List pagination flag, if is false, pagination is disabled                              |

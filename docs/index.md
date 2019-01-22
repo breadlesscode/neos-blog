@@ -17,7 +17,7 @@ This Neos CMS plugin is for a simple blog functionality.
  - Listing with pagination
 
 ## Installation
-Most of the time you have to make small adjustments to a package (e.g., the configuration in Settings.yaml). Because of that, it is important to add the corresponding package to the composer from your theme package. Mostly this is the site package located under Packages/Sites/. To install it correctly go to your theme package (e.g.Packages/Sites/Foo.Bar) and run following command:
+Most of the time you have to make small adjustments to a package (e.g. the configuration in Settings.yaml). Because of that, it is important to add the corresponding package to the composer from your theme package. Mostly this is the site package located under Packages/Sites/. To install it correctly go to your theme package (e.g.Packages/Sites/Foo.Bar) and run following command:
 
 ```bash
 composer require breadlesscode/neos-blog --no-update
