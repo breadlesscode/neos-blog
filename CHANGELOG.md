@@ -1,3 +1,12 @@
+## [2.0.1](https://github.com/breadlesscode/neos-blog/compare/v2.0.0...v2.0.1) (2019-04-10)
+
+
+### Upgrade
+
+* Update commitizen ([d6e429d759197b40f44212b53efa87e249daa5e7](https://github.com/breadlesscode/neos-blog/commit/d6e429d759197b40f44212b53efa87e249daa5e7))
+* Updating vuepress ([292cf4506f05988b33d415fcccf0845a0d58e342](https://github.com/breadlesscode/neos-blog/commit/292cf4506f05988b33d415fcccf0845a0d58e342))
+* Upgrade semantic-release ([ba58f8f7b56e6a1468def6a0e48af18a96c47af0](https://github.com/breadlesscode/neos-blog/commit/ba58f8f7b56e6a1468def6a0e48af18a96c47af0))
+
 ## [1.3.2](https://github.com/breadlesscode/neos-blog/compare/v1.3.1...v1.3.2) (2018-11-21)
 
 
