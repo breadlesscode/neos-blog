@@ -36,6 +36,6 @@ deploy:
     github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
     repo: breadlesscode/neos-blog
     keep-history: true
-    target-branch: master
+    target-branch: gh-pages
     on:
         branch: gh-pages
