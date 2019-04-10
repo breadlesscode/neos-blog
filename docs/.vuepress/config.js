@@ -1,5 +1,6 @@
 module.exports = {
   title: "Neos-Blog Documentation",
+  base: "https://breadlesscode.github.io/neos-blog/",
   themeConfig: {
     nav: [
       {
