@@ -1,0 +1,14 @@
+prototype(Breadlesscode.Blog:Component.PostList.Item) < prototype(Neos.Fusion:Component) {
+    excerpt = ${ q(item).property('excerpt') }
+
+    renderer = afx`
+      <article class="blog_post_short">
+        <h2 class="blog_post_short__title">
+          <Breadlesscode.Listable:ListItem />
+        </h2>
+        <p @if.hasExcerpt={props.excerpt}>{props.excerpt}</p>
+      </article>
+    `
+}
+// for better backwards compablity
+prototype(Breadlesscode.Blog:Component.PostListItem) < prototype(Breadlesscode.Blog:Component.PostList.Item)

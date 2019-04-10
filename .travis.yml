@@ -1,21 +1,41 @@
-language: php
+language: node_js
 sudo: false
+node_js:
+  - "10"
+env:
+  - CXX=g++-4.8
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
 cache:
   directories:
     - ~/.npm
     - node_modules
 notifications:
   email: false
-script: 'echo "No test specified";'
-php:
-  - '7.1'
 before_install:
   - nvm install && nvm use
   - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.9.4
   - export PATH="$HOME/.yarn/bin:$PATH"
   - yarn install
+install:
+  - yarn global add vuepress
+script: yarn run docs:build
 after_success:
   - yarn semantic-release
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
+deploy:
+    provider: pages
+    skip-cleanup: true
+    local_dir: Documentation/.vuepress/dist
+    github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+    repo: breadlesscode/neos-blog
+    keep-history: true
+    target-branch: master
+    on:
+        branch: master

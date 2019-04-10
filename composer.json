@@ -1,11 +1,29 @@
 {
-    "description": "Ready to use blog package",
     "type": "neos-plugin",
     "name": "breadlesscode/neos-blog",
     "license": "MIT",
+    "description": "Ready to use blog package",
+    "authors": [
+        {
+            "name": "Marvin Kuhn",
+            "email": "marvin@kuhnweblab.com",
+            "homepage": "https://kuhnweblab.com",
+            "role": "Developer"
+        }
+    ],
+    "keywords": [
+        "flow",
+        "neos",
+        "blog",
+        "plugin",
+        "author",
+        "category",
+        "tags"
+    ],
     "require": {
         "neos/flow": "*",
         "neos/neos": "~4.0",
+        "neos/fusion-afx": "~1.0",
         "neos/swiftmailer": "~6.0",
         "breadlesscode/neos-commentable": "~1.1",
         "breadlesscode/neos-listable": "~1.2"
@@ -14,6 +32,21 @@
         "psr-4": {
             "Breadlesscode\\Blog\\": "Classes/"
         }
+    },
+    "archive": {
+        "exclude": [
+            ".editorconfig",
+            ".gitattributes",
+            ".github",
+            ".gitignore",
+            ".releaserc",
+            ".nvmrc",
+            ".travis.yml",
+            "CODE_OF_CONDUCT.md",
+            "package.json",
+            "yarn.lock",
+            "docs"
+        ]
     },
     "extra": {
         "neos": {

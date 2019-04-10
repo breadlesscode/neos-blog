@@ -1,49 +1,19 @@
 prototype(Breadlesscode.Blog:Document.Post) >
 prototype(Breadlesscode.Blog:Document.Post) < prototype(Neos.Neos:Page) {
-    @context.author =  ${ Blog.getUserByIdentifier(q(node).property('author')) }
+    @context {
+        author =  ${ Blog.getUserByIdentifier(q(node).property('author')) }
+        publishDate = ${ Date.formatCldr(q(node).property('datePublished'), 'E, dd. MMMM y H:mm:ss (zzzz)') }
+    }
 
     body >
-    body = Neos.Fusion:Tag {
-        content = Neos.Fusion:Array {
-            article = Neos.Fusion:Tag {
-                tagName = 'article'
-                attributes.class = 'blog_post'
-
-                content = Neos.Fusion:Array {
-                    heading = Neos.Fusion:Tag {
-                        tagName = 'h1'
-                        content = ${ q(node).property('title') }
-                        attributes.class = 'blog_post__title'
-                    }
-
-                    content = Neos.Neos:ContentCollection {
-                        nodePath = 'main'
-                        attributes.class = 'blog_post__content'
-                    }
-
-                    details = Neos.Fusion:Tag {
-                        attributes.class = 'blog_post__details'
-                        content = Neos.Fusion:Array {
-                            createdBy = ${  author.label + ' &bull; ' }
-                            createdAt = Neos.Fusion:Tag {
-                                tagName = 'time'
-                                content = ${Date.formatCldr(q(node).property('datePublished'), 'E, dd. MMMM y H:mm:ss (zzzz)')}
-                            }
-                        }
-                        content.@process.wrapInParagraph = ${ '<p>' + value + '</p>' }
-                    }
-                }
-            }
-
-            comments = Neos.Fusion:Tag {
-                tagName = 'section'
-                attributes.class = 'blog_comments'
-                content = Neos.Fusion:Array {
-                    form = Breadlesscode.Blog:Form.BlogComment
-                    comments = Breadlesscode.Commentable:Collection.Comment
-                }
-            }
-        }
-        @position = 'after bodyTag'
-    }
+    body = afx`
+      <article class="blog_post">
+        <Breadlesscode.Blog:Component.PostContent />
+        <div class="blog_post__details">
+          {author.label} &bull; <time>{ publishDate }</time>
+        </div>
+        <Breadlesscode.Blog:Component.CommentSection />
+      </article>
+    `
+    body.@position = 'after bodyTag'
 }

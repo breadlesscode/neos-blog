@@ -2,6 +2,7 @@
   superTypes:
     'Neos.Neos:Document': true
     'Breadlesscode.Blog:Mixin.Authorable': true
+    'Breadlesscode.Blog:Mixin.Excerpt': true
     'Breadlesscode.Blog:Mixin.PublicationDate': true
     'Breadlesscode.Blog:Mixin.RelatedPosts': false
     'Breadlesscode.Blog:Mixin.Taggable': true

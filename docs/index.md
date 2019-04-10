@@ -16,34 +16,11 @@ This Neos CMS plugin is for a simple blog functionality.
  - Author page
  - Listing with pagination
 
-
 ## Installation
-Most of the time you have to make small adjustments to a package (e.g., the configuration in Settings.yaml). Because of that, it is important to add the corresponding package to the composer from your theme package. Mostly this is the site package located under Packages/Sites/. To install it correctly go to your theme package (e.g.Packages/Sites/Foo.Bar) and run following command:
+Most of the time you have to make small adjustments to a package (e.g. the configuration in Settings.yaml). Because of that, it is important to add the corresponding package to the composer from your theme package. Mostly this is the site package located under Packages/Sites/. To install it correctly go to your theme package (e.g.Packages/Sites/Foo.Bar) and run following command:
 
 ```bash
 composer require breadlesscode/neos-blog --no-update
 ```
 
 The --no-update command prevent the automatic update of the dependencies. After the package was added to your theme composer.json, go back to the root of the Neos installation and run composer update. Your desired package is now installed correctly.
-
-## Documentation
-
-Documentation: https://breadlesscode.github.io/neos-blog
-
-## Contribution
-
-We'd love you to contribute to neos-blog. We try to make it as easy as possible.
-We are using semantic-release to have more time to concentrate on important stuff
-instead of struggling in the dependency or release hell.
-
-Therefore the first rule is to follow the [eslint commit message guideline](https://github.com/conventional-changelog-archived-repos/conventional-changelog-eslint/blob/master/convention.md).
-It is really easy, when you always commit via `yarn commit`. Commitizen will guide you.
-
-All PRs will be merged into the master branch. Travis and semantic release will check the commit messages and start
-building a new release when the analysis of the latest commits will trigger that.
-
-If you have questions just ping us on twitter or github.
-
-
-## License
-The MIT License (MIT). Please see [License File](LICENSE) for more information.

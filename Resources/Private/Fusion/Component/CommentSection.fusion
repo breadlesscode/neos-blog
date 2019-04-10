@@ -1,0 +1,17 @@
+prototype(Breadlesscode.Blog:Component.CommentSection) < prototype(Neos.Fusion:Component) {
+    formPosition = 'top'
+
+    renderer = afx`
+      <section class="blog_comments">
+        <div class="blog_comments__form blog_comments__form--top"
+          @if.formPositionIsTop={ String.toLowerCase(props.formPosition) == 'top' }>
+          <Breadlesscode.Blog:Form.BlogComment/>
+        </div>
+        <Breadlesscode.Commentable:Collection.Comment />
+        <div class="blog_comments__form blog_comments__form--bottom"
+          @if.formPositionIsTop={ String.toLowerCase(props.formPosition) == 'bottom' }>
+          <Breadlesscode.Blog:Form.BlogComment/>
+        </div>
+      </section>
+    `
+}

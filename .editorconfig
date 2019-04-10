@@ -11,7 +11,7 @@ end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-[*.{html,yml,yaml}]
+[*.{html,yml,yaml,js}]
 indent_size = 2
 
 [*.xlf]

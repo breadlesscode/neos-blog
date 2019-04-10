@@ -1,0 +1,14 @@
+prototype(Breadlesscode.Blog:Component.PostList.Author) < prototype(Neos.Fusion:Component) {
+    author = ${ documentNode }
+    headline = ${ Translation.translate('Breadlesscode.Blog:Main:author.title') + ': ' + q(this.author).property('title') }
+    itemsPerPage = 10
+    paginated = true
+
+    renderer = afx`
+        <h1 @if.hasHeadline={ props.headline }>{ props.headline }</h1>
+        <Breadlesscode.Blog:Component.PostList
+            paginated={ props.paginated }
+            itemsPerPage={ props.itemsPerPage }
+            collection={ q(site).find('[instanceof Breadlesscode.Blog:Document.Post]').filterByAuthor(props.author).get() } />
+    `
+}

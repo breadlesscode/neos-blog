@@ -1,0 +1,7 @@
+prototype(Breadlesscode.Blog:Helper.ConvertToArray) < prototype(Neos.Fusion:Value) {
+    value = ${ value }
+    value.@process{
+        convertToArray = ${ [ value ] }
+        convertToArray.@if.isNoArray = ${ Type.isArray(value) }
+    }
+}
