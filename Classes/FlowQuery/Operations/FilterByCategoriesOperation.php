@@ -23,7 +23,7 @@ class FilterByCategoriesOperation extends FilterByReferencesOperation
     public function evaluate(FlowQuery $flowQuery, array $arguments)
     {
         if (!is_array($arguments[0])) {
-            throw new FlowQueryException('The first parameter of '.self::$shortName.' should be an array');
+            $arguments[1] = [ $arguments[1] ];
         }
 
         $context = \array_filter($flowQuery->getContext(), $this->getReferenceFilter('categories', $arguments[0]));
