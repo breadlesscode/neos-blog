@@ -23,7 +23,7 @@ class FilterByTagsOperation extends FilterByReferencesOperation
     public function evaluate(FlowQuery $flowQuery, array $arguments)
     {
         if (!is_array($arguments[0])) {
-            $arguments[1] = [ $arguments[1] ];
+            $arguments[0] = [ $arguments[0] ];
         }
 
         $context = \array_filter($flowQuery->getContext(), $this->getReferenceFilter('tags', $arguments[0]));
