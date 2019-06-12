@@ -1,3 +1,4 @@
+include: Helper/**/*.fusion
 include: Component/**/*.fusion
 include: Content/**/*.fusion
 include: Form/**/*.fusion
