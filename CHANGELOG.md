@@ -1,3 +1,10 @@
+## [2.0.3](https://github.com/breadlesscode/neos-blog/compare/v2.0.2...v2.0.3) (2019-06-12)
+
+
+### Fix
+
+* filter helpers now accepts non array arguments ([292640e919af9314ca6ae5115fec570ab314cecb](https://github.com/breadlesscode/neos-blog/commit/292640e919af9314ca6ae5115fec570ab314cecb)), closes [#7](https://github.com/breadlesscode/neos-blog/issues/7)
+
 ## [2.0.1](https://github.com/breadlesscode/neos-blog/compare/v2.0.0...v2.0.1) (2019-04-10)
 
 
