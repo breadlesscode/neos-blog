@@ -1,3 +1,10 @@
+## [2.0.4](https://github.com/breadlesscode/neos-blog/compare/v2.0.3...v2.0.4) (2019-06-12)
+
+
+### Fix
+
+* fxied silly array index error :confounded: ([6be8dbf55554ac00b1fc9abda3efe1d0c6c4ef6e](https://github.com/breadlesscode/neos-blog/commit/6be8dbf55554ac00b1fc9abda3efe1d0c6c4ef6e))
+
 ## [2.0.3](https://github.com/breadlesscode/neos-blog/compare/v2.0.2...v2.0.3) (2019-06-12)
 
 
