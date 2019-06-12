@@ -4,11 +4,13 @@ prototype(Breadlesscode.Blog:Component.PostList.Author) < prototype(Neos.Fusion:
     itemsPerPage = 10
     paginated = true
 
+    @context.collection = ${ q(site).find('[instanceof Breadlesscode.Blog:Document.Post]').filterByAuthor(this.author).get() }
+
     renderer = afx`
         <h1 @if.hasHeadline={ props.headline }>{ props.headline }</h1>
         <Breadlesscode.Blog:Component.PostList
             paginated={ props.paginated }
             itemsPerPage={ props.itemsPerPage }
-            collection={ q(site).find('[instanceof Breadlesscode.Blog:Document.Post]').filterByAuthor(props.author).get() } />
+            collection={ collection } />
     `
 }
