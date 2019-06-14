@@ -1,3 +1,10 @@
+## [2.0.5](https://github.com/breadlesscode/neos-blog/compare/v2.0.4...v2.0.5) (2019-06-12)
+
+
+### Fix
+
+* wired author page listing bug ([e460ddff1404f8151adabbd01c6e4a8ca484ecf8](https://github.com/breadlesscode/neos-blog/commit/e460ddff1404f8151adabbd01c6e4a8ca484ecf8))
+
 ## [2.0.4](https://github.com/breadlesscode/neos-blog/compare/v2.0.3...v2.0.4) (2019-06-12)
 
 
